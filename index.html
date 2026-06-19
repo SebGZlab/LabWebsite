@@ -185,6 +185,22 @@
   footer .mono{color:var(--faint)}
   footer a:hover{color:var(--text)}
 
+  .fish-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center}
+  .fish-copy p{color:var(--muted);font-size:16px;margin:0 0 16px}
+  .fish-points{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-direction:column;gap:10px}
+  .fish-points li{position:relative;padding-left:22px;color:var(--text);font-size:15px}
+  .fish-points li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;border-radius:50%;background:var(--gfp);box-shadow:0 0 9px var(--gfp)}
+  .fish-video{margin:0}
+  .fish-video video{width:100%;display:block;border-radius:14px;border:1px solid var(--line-strong);background:#04060d}
+  .fish-video figcaption{margin-top:12px;color:var(--faint);font-size:13.5px;line-height:1.5}
+  .m-bio{margin-top:12px}
+  .m-bio summary{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--dapi);cursor:pointer;list-style:none;display:inline-block}
+  .m-bio summary::-webkit-details-marker{display:none}
+  .m-bio summary::after{content:" \25BE"}
+  .m-bio[open] summary::after{content:" \25B4"}
+  .m-bio p{color:var(--muted);font-size:13px;line-height:1.55;margin:11px 0 0;text-align:left}
+  @media (max-width:820px){.fish-grid{grid-template-columns:1fr;gap:28px}}
+
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
   @keyframes drift1{from{transform:translate(0,0)}to{transform:translate(34px,-26px)}}
@@ -218,6 +234,7 @@
     <nav class="links" aria-label="Primary">
       <a href="#home">Home</a>
       <a href="#research">Research</a>
+      <a href="#zebrafish">Model</a>
       <a href="#team">Team</a>
       <a href="#gallery">Gallery</a>
       <a href="#publications">Publications</a>
@@ -293,6 +310,37 @@
   </div>
 </section>
 
+<!-- ===== WHY ZEBRAFISH ===== -->
+<section class="section" id="zebrafish">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot dapi"></span><span class="mono">Model system</span></div>
+      <h2 class="title">Why zebrafish?</h2>
+      <p class="lede">A small tropical fish that lets us watch blood and lymphatic vessels assemble, live, inside a developing animal.</p>
+    </div>
+    <div class="fish-grid">
+      <div class="fish-copy reveal">
+        <p>The zebrafish (<em>Danio rerio</em>) is one of the most powerful models in vascular biology. Its embryos and larvae develop outside the mother and are almost completely transparent, so an entire vascular network can be imaged as it forms in a living animal — at a resolution and over a timescale that simply aren't possible in mammals.</p>
+        <p>Just as importantly, the genetics are exquisite. Transgenic lines light up endothelial cells and lymphatics in fluorescent colour, CRISPR/Cas9 makes gene editing fast and precise, and the core pathways that build vessels — VEGF, Notch, Prox1 and others — are conserved with humans. Large clutches and rapid development make zebrafish ideal for genetic screens and for asking what happens when vascular development goes wrong. That combination is exactly why we use them to study the vasculature in health and disease.</p>
+        <ul class="fish-points">
+          <li>Optically transparent &mdash; live imaging of vessels <em>in vivo</em></li>
+          <li>Rapid, external development and large clutches</li>
+          <li>Vascular signalling conserved with humans (VEGF, Notch, Prox1)</li>
+          <li>Transgenic reporters that label blood vessels and lymphatics</li>
+          <li>CRISPR/Cas9 genetics, and amenable to drug screening</li>
+        </ul>
+      </div>
+      <figure class="fish-video reveal">
+        <video controls muted loop playsinline preload="metadata" poster="nanobody-poster.jpg">
+          <source src="nanobody.mp4" type="video/mp4">
+          Your browser doesn&rsquo;t support embedded video.
+        </video>
+        <figcaption>Live imaging with a nanobody-based fluorescent reporter (shown in inverted greyscale) &mdash; the kind of probe engineering and live microscopy at the core of the lab's work.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- ===== TEAM ===== -->
 <section class="section" id="team">
   <div class="wrap">
@@ -311,7 +359,7 @@
     <div class="members-grid">
       <div class="member reveal"><div class="avatar">LL</div><h4>Liubov Lobanova</h4><div class="role">Research Technician</div></div>
       <div class="member reveal"><div class="avatar">WM</div><h4>Wrynan Munabirul</h4><div class="role">MSc Student</div></div>
-      <div class="member reveal"><div class="avatar">AG</div><h4>Ana Gabriel</h4><div class="role">MSc Student</div></div>
+      <div class="member reveal"><div class="avatar">AG</div><h4>Ana Gabriel</h4><div class="role">MSc Student</div><details class="m-bio"><summary>Read bio</summary><p>Ana and her four-legged furry monster are transplants from the U.S. An animal lover at heart, Ana completed her B.Sc. in Biology at Rockhurst University, where she fell in love with a plate of developing zebrafish embryos. She enjoys running (slowly) across the beautiful Saskatchewan prairies with her monster, who usually drags her for miles.</p><p>In the Gauvrit lab, Ana studies the influence of key genes in the development of the lymphatic system using both zebrafish and mice. She enjoys building the transgenic tools that will facilitate this project and sweet-talking bacteria into making the genes she wants.</p></details></div>
       <div class="member reveal"><div class="avatar">ZH</div><h4>Zyna Hernandez</h4><div class="role">MSc Student</div></div>
       <div class="member reveal"><div class="avatar">ME</div><h4>Maureen Ekwunife</h4><div class="role">Summer Student</div></div>
     </div>
@@ -521,7 +569,7 @@
       <p class="lede">Our research is made possible by the generous support of these organizations.</p>
     </div>
     <div class="funding-card reveal">
-      <img loading="lazy" decoding="async" src="nserc.png" alt="Natural Sciences and Engineering Research Council of Canada (NSERC / CRSNG)">
+      <img loading="lazy" decoding="async" src="nserc.svg" alt="Natural Sciences and Engineering Research Council of Canada (NSERC / CRSNG)">
       <img loading="lazy" decoding="async" src="usask.jpg" alt="University of Saskatchewan, College of Medicine">
     </div>
   </div>
