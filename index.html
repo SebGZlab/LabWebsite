@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<!--
+  GAUVRIT LAB — Vascular Development in Health & Disease
+  University of Saskatchewan, College of Medicine
+  -----------------------------------------------------
+  HOW TO EDIT THE NEWS:  find the section that starts with  <!-- ===== NEWS ===== -->
+  Each item is one  <div class="news"> ... </div>  block:
+      <div class="news">
+        <div class="when">2025</div>          <-- the date (left column)
+        <div>
+          <h4>Headline goes here</h4>          <-- the title
+          <p>One or two sentences.</p>          <-- the blurb
+        </div>
+      </div>
+  To ADD news: copy a whole block and paste it as the FIRST item (newest on top).
+  To REMOVE news: delete the whole block. To EDIT: just change the text between the tags.
+
+  Images (headshot + 3 micrographs) are embedded directly in this file, so it works anywhere.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gauvrit Lab — Vascular Development in Health &amp; Disease · USask</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#080a12;--bg2:#0e1120;--bg3:#141831;
+    --line:rgba(255,255,255,.09);--line-strong:rgba(255,255,255,.16);
+    --text:#eaeefb;--muted:#8e97b4;--faint:#5d6688;
+    --dapi:#54d6f2;--gfp:#5be6a6;--cherry:#f072c4;
+    --display:'Avenir Next','Avenir','Mulish',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    --body:'Avenir Next','Avenir','Mulish',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --wrap:1160px;
+    --lymph:url("lymph.jpg");
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;background:var(--bg)}
+  body{margin:0;background:transparent;color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--dapi);color:#04121a}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+  .mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;vertical-align:middle;margin-right:9px}
+  .dot.dapi{background:var(--dapi);box-shadow:0 0 10px var(--dapi)}
+  .dot.gfp{background:var(--gfp);box-shadow:0 0 10px var(--gfp)}
+  .dot.cherry{background:var(--cherry);box-shadow:0 0 10px var(--cherry)}
+  .eyebrow{display:flex;align-items:center;margin-bottom:22px}
+  h2.title{font-family:var(--display);font-weight:800;font-size:clamp(30px,4.4vw,52px);line-height:1.04;letter-spacing:-.02em;margin:0 0 18px}
+  .lede{color:var(--muted);font-size:18px;max-width:64ch;margin:0}
+
+  header.nav{position:sticky;top:0;z-index:60;backdrop-filter:blur(14px);background:rgba(8,10,18,.72);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:68px;gap:18px}
+  .brand{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.01em;display:flex;align-items:center;gap:11px;flex:none}
+  .brand .seal{width:22px;height:22px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,var(--dapi),transparent 60%),radial-gradient(circle at 68% 64%,var(--cherry),transparent 58%),radial-gradient(circle at 50% 70%,var(--gfp),transparent 62%);box-shadow:0 0 16px rgba(84,214,242,.5)}
+  nav.links{display:flex;gap:2px}
+  nav.links a{font-size:14.5px;font-weight:600;color:var(--muted);padding:8px 11px;border-radius:8px;position:relative;transition:color .2s;white-space:nowrap}
+  nav.links a:hover{color:var(--text)}
+  nav.links a.active{color:var(--text)}
+  nav.links a.active::after{content:"";position:absolute;left:11px;right:11px;bottom:2px;height:2px;border-radius:2px;background:var(--dapi);box-shadow:0 0 8px var(--dapi)}
+
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden}
+  .scope{position:absolute;inset:0;z-index:0}
+  .channel{position:absolute;inset:-15%;filter:blur(38px);mix-blend-mode:screen;transition:opacity .5s ease;will-change:transform}
+  .channel.dapi{background:radial-gradient(closest-side,rgba(84,214,242,.9),transparent 70%) 18% 34%/280px 280px no-repeat,radial-gradient(closest-side,rgba(84,214,242,.7),transparent 70%) 62% 22%/220px 220px no-repeat,radial-gradient(closest-side,rgba(84,214,242,.8),transparent 70%) 78% 70%/320px 320px no-repeat,radial-gradient(closest-side,rgba(84,214,242,.6),transparent 70%) 40% 78%/200px 200px no-repeat;animation:drift1 26s ease-in-out infinite alternate}
+  .channel.gfp{background:radial-gradient(closest-side,rgba(91,230,166,.85),transparent 70%) 30% 30%/300px 300px no-repeat,radial-gradient(closest-side,rgba(91,230,166,.6),transparent 70%) 70% 40%/240px 240px no-repeat,radial-gradient(closest-side,rgba(91,230,166,.75),transparent 70%) 52% 76%/280px 280px no-repeat;animation:drift2 30s ease-in-out infinite alternate}
+  .channel.cherry{background:radial-gradient(closest-side,rgba(240,114,196,.85),transparent 70%) 24% 60%/260px 260px no-repeat,radial-gradient(closest-side,rgba(240,114,196,.65),transparent 70%) 66% 64%/300px 300px no-repeat,radial-gradient(closest-side,rgba(240,114,196,.7),transparent 70%) 80% 28%/200px 200px no-repeat;animation:drift3 34s ease-in-out infinite alternate}
+  .nuclei{position:absolute;inset:0;mix-blend-mode:screen;opacity:.9;background:radial-gradient(circle,rgba(190,240,255,.9) 0,transparent 2px) 19% 35%/3px 3px no-repeat,radial-gradient(circle,rgba(190,240,255,.8) 0,transparent 2px) 63% 23%/3px 3px no-repeat,radial-gradient(circle,rgba(190,240,255,.85) 0,transparent 2px) 79% 71%/3px 3px no-repeat,radial-gradient(circle,rgba(190,240,255,.7) 0,transparent 2px) 41% 79%/3px 3px no-repeat,radial-gradient(circle,rgba(190,240,255,.8) 0,transparent 2px) 31% 31%/3px 3px no-repeat}
+  .vignette{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle at 52% 46%,transparent 30%,rgba(8,10,18,.55) 70%,var(--bg) 100%)}
+  .scope.off-dapi .dapi{opacity:0}.scope.off-gfp .gfp{opacity:0}.scope.off-cherry .cherry{opacity:0}
+  .hero-in{position:relative;z-index:2;width:100%}
+  .hero h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,6.2vw,78px);line-height:1.0;letter-spacing:-.03em;margin:18px 0 24px;max-width:18ch}
+  .hero h1 em{font-style:normal;color:var(--dapi);text-shadow:0 0 30px rgba(84,214,242,.4)}
+  .hero p.sub{font-size:19px;color:var(--muted);max-width:60ch;margin:0 0 34px}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .chips .chip-label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--faint);text-transform:uppercase;margin-right:4px}
+  .chip{font-family:var(--mono);font-size:12px;letter-spacing:.02em;padding:8px 14px;border-radius:999px;cursor:pointer;background:var(--bg3);border:1px solid var(--line-strong);color:var(--text);display:inline-flex;align-items:center;transition:all .2s}
+  .chip:hover{border-color:var(--faint)}
+  .chip[aria-pressed="false"]{opacity:.45;color:var(--muted)}
+  .chip[aria-pressed="false"] .dot{box-shadow:none;opacity:.5}
+  .chip:focus-visible{outline:2px solid var(--dapi);outline-offset:2px}
+  .chan-legend{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;color:var(--faint);margin-top:12px;text-transform:uppercase}
+  .scroll-cue{position:absolute;left:32px;bottom:30px;z-index:2}
+
+  .section{padding:112px 0;border-top:1px solid var(--line);position:relative}
+  .section-head{margin-bottom:52px}
+
+  .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .proj{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:30px 30px 34px;position:relative;overflow:hidden;transition:border-color .25s,transform .25s}
+  .proj::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent)}
+  .proj:hover{border-color:var(--line-strong);transform:translateY(-3px)}
+  .proj .pid{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.08em}
+  .proj h3{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.01em;margin:14px 0 12px;line-height:1.15}
+  .proj p{color:var(--muted);font-size:15.5px;margin:0 0 18px}
+  .proj .tags{display:flex;gap:8px;flex-wrap:wrap}
+  .tag{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:4px 9px}
+  .approaches{margin-top:36px;border-top:1px dashed var(--line);padding-top:30px}
+  .approaches .mono{margin-bottom:18px;display:block}
+  .appr-row{display:flex;flex-wrap:wrap;gap:12px}
+  .appr{display:flex;align-items:center;gap:10px;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:11px 16px;font-size:14.5px;font-weight:600}
+
+  .pi-card{display:flex;gap:30px;align-items:center;background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:30px;margin-bottom:34px;flex-wrap:wrap}
+  .avatar{width:84px;height:84px;border-radius:50%;flex:none;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:24px;color:var(--bg);background:radial-gradient(circle at 32% 28%,var(--dapi),transparent 62%),radial-gradient(circle at 70% 66%,var(--cherry),transparent 60%),radial-gradient(circle at 50% 74%,var(--gfp),transparent 64%),var(--bg3);box-shadow:0 0 0 1px var(--line-strong),0 0 24px rgba(84,214,242,.25)}
+  .avatar.photo{overflow:hidden}
+  .avatar.photo img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+  .pi-card .avatar.photo{width:118px;height:118px;box-shadow:0 0 0 1px var(--line-strong),0 0 30px rgba(84,214,242,.22)}
+  .pi-card .who{flex:1;min-width:240px}
+  .pi-card h3{font-family:var(--display);font-weight:800;font-size:26px;margin:0 0 4px}
+  .pi-card .role{font-family:var(--mono);font-size:12.5px;color:var(--dapi);letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}
+  .pi-card p{color:var(--muted);font-size:15.5px;margin:0;max-width:70ch}
+  .members-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .member{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:24px;text-align:center;transition:border-color .25s}
+  .member:hover{border-color:var(--line-strong)}
+  .member .avatar{margin:0 auto 16px;width:64px;height:64px;font-size:20px}
+  .member h4{font-family:var(--display);font-weight:700;font-size:17px;margin:0 0 4px}
+  .member .role{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+  .alumni{margin-top:46px}
+  .alumni .mono{display:block;margin-bottom:18px}
+  .alum-row{display:flex;flex-wrap:wrap;gap:12px}
+  .alum{display:flex;align-items:center;gap:12px;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:12px 18px}
+  .alum .ring{width:34px;height:34px;border-radius:50%;flex:none;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:12px;color:var(--bg);background:radial-gradient(circle at 40% 35%,var(--cherry),transparent 65%),radial-gradient(circle at 65% 70%,var(--dapi),transparent 65%),var(--bg3);box-shadow:0 0 0 1px var(--line)}
+  .alum b{font-weight:700;font-size:15px}
+  .alum span{display:block;font-family:var(--mono);font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+
+  .gallery-feature{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin-bottom:14px}
+  .gallery-feature img{width:100%;display:block}
+  .gallery-feature .cap,.plate .cap{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;z-index:2;background:linear-gradient(transparent,rgba(4,6,13,.92));font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:#c9d2ee;text-transform:uppercase}
+  .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .plate{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:#04060d}
+  .plate .field{position:absolute;inset:0;filter:blur(8px)}
+  .plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .plate .scalebar{position:absolute;right:14px;top:14px;z-index:2;width:46px;height:3px;background:#fff;opacity:.85;border-radius:2px}
+  .plate .scalebar span{position:absolute;right:0;top:7px;font-family:var(--mono);font-size:9px;color:#fff;opacity:.85}
+
+  .pub{display:grid;grid-template-columns:70px 1fr auto;gap:24px;align-items:baseline;padding:24px 0;border-top:1px solid var(--line)}
+  .pub:last-of-type{border-bottom:1px solid var(--line)}
+  .pub .yr{font-family:var(--mono);font-size:14px;color:var(--dapi)}
+  .pub .cite h4{font-weight:700;font-size:17.5px;margin:0 0 6px;line-height:1.35}
+  .pub .cite .auth{color:var(--muted);font-size:14.5px}
+  .pub .cite .auth b{color:var(--text);font-weight:700}
+  .pub .cite .venue{font-style:italic;color:var(--muted)}
+  .pub .links a{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted);border:1px solid var(--line);border-radius:7px;padding:6px 11px;white-space:nowrap;transition:all .2s;display:inline-block}
+  .pub .links a:hover{color:var(--text);border-color:var(--dapi)}
+  .scholar-link{margin-top:28px;font-family:var(--mono);font-size:13px;letter-spacing:.03em}
+  .scholar-link a{color:var(--dapi);border-bottom:1px solid rgba(84,214,242,.4);padding-bottom:1px}
+
+  .news-list{display:grid;gap:0}
+  .news{display:grid;grid-template-columns:120px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line)}
+  .news:last-child{border-bottom:1px solid var(--line)}
+  .news .when{font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;padding-top:3px}
+  .news h4{margin:0 0 6px;font-family:var(--display);font-weight:700;font-size:18px}
+  .news p{margin:0;color:var(--muted);font-size:15.5px}
+
+  .panel{background:linear-gradient(160deg,rgba(91,230,166,.08),rgba(240,114,196,.06)),var(--bg2);border:1px solid var(--line-strong);border-radius:18px;padding:38px}
+  .panel h3{font-family:var(--display);font-weight:800;font-size:24px;margin:0 0 12px}
+  .panel p{color:var(--muted);font-size:15.5px;margin:0 0 14px}
+  .panel ul{margin:0 0 22px;padding-left:18px;color:var(--muted);font-size:15px}
+  .panel ul li{margin-bottom:6px}
+  .btn{font-family:var(--mono);font-size:13px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;background:var(--dapi);color:#04121a;border:none;border-radius:10px;padding:14px 26px;font-weight:600;display:inline-block;transition:transform .15s,box-shadow .2s}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(84,214,242,.3)}
+
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .contact-info .row{padding:18px 0;border-top:1px solid var(--line)}
+  .contact-info .row:first-of-type{border-top:none;padding-top:0}
+  .contact-info .k{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--faint);margin-bottom:5px}
+  .contact-info .v{font-size:17px}
+  .contact-info .v a{color:var(--dapi)}
+  .contact-info .v a:hover{text-decoration:underline}
+  .landack{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:30px;align-self:start}
+  .landack .mono{display:block;margin-bottom:14px}
+  .landack p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.65}
+  .landack a{color:var(--dapi);border-bottom:1px solid rgba(84,214,242,.4)}
+  .landack a:hover{border-color:var(--dapi)}
+  .page-bg{position:fixed;inset:0;z-index:-1;background:var(--lymph) center/cover;filter:brightness(1.12) saturate(1.2)}
+  .page-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,10,18,.5),rgba(8,10,18,.62))}
+  .hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(8,10,18,.82),rgba(8,10,18,.35) 55%,transparent)}
+  .hero .scope{opacity:.85}
+  .funding-card{background:#fff;border-radius:18px;padding:38px 56px;display:flex;gap:64px;align-items:center;justify-content:center;flex-wrap:wrap}
+  .funding-card img{height:94px;width:auto}
+  @media (max-width:520px){.funding-card{gap:34px;padding:28px}.funding-card img{height:62px}}
+
+  footer{border-top:1px solid var(--line);padding:38px 0}
+  .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  footer .mono{color:var(--faint)}
+  footer a:hover{color:var(--text)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @keyframes drift1{from{transform:translate(0,0)}to{transform:translate(34px,-26px)}}
+  @keyframes drift2{from{transform:translate(0,0)}to{transform:translate(-30px,24px)}}
+  @keyframes drift3{from{transform:translate(0,0)}to{transform:translate(22px,30px)}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.channel{animation:none!important}.reveal{transition:none;opacity:1;transform:none}}
+
+  @media (max-width:880px){
+    .nav-in{flex-direction:column;height:auto;gap:8px;padding:11px 0}
+    nav.links{width:100%;overflow-x:auto;justify-content:flex-start;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    nav.links::-webkit-scrollbar{display:none}
+    .proj-grid,.contact-grid{grid-template-columns:1fr}
+    .members-grid{grid-template-columns:repeat(2,1fr)}
+    .gallery-grid{grid-template-columns:repeat(2,1fr)}
+    .pub{grid-template-columns:50px 1fr;gap:14px}
+    .pub .links{grid-column:2}
+    .news{grid-template-columns:1fr;gap:6px}
+    .section{padding:80px 0}
+    .wrap{padding:0 22px}
+    .scroll-cue{display:none}
+  }
+  @media (max-width:520px){.members-grid,.gallery-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page-bg" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#home"><span class="seal"></span>Gauvrit Lab</a>
+    <nav class="links" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#research">Research</a>
+      <a href="#team">Team</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#publications">Publications</a>
+      <a href="#news">News</a>
+      <a href="#support">Support</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HOME ===== -->
+<section class="hero" id="home">
+  <div class="scope" id="scope" aria-hidden="true">
+    <div class="channel cherry"></div>
+    <div class="channel gfp"></div>
+    <div class="channel dapi"></div>
+    <div class="nuclei"></div>
+  </div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <span class="mono">Vascular Development in Health &amp; Disease &nbsp;·&nbsp; University of Saskatchewan</span>
+    <h1>How the body builds its <em>blood and lymphatic vessels</em>.</h1>
+    <p class="sub">We use zebrafish and mouse models, live imaging, and genetics to map how vascular networks form — and what goes wrong in vascular disease.</p>
+    <div class="chips" role="group" aria-label="Toggle imaging channels">
+      <span class="chip-label">Channels</span>
+      <button class="chip" data-ch="dapi" aria-pressed="true"><span class="dot dapi"></span>DAPI</button>
+      <button class="chip" data-ch="gfp" aria-pressed="true"><span class="dot gfp"></span>kdrl:EGFP</button>
+      <button class="chip" data-ch="cherry" aria-pressed="true"><span class="dot cherry"></span>lyve1b:DsRed</button>
+    </div>
+    <div class="chan-legend">Nuclei &nbsp;·&nbsp; Blood vessels &nbsp;·&nbsp; Lymphatics — toggle to merge the channels</div>
+  </div>
+  <div class="scroll-cue mono">↓ &nbsp;Scroll</div>
+</section>
+
+<!-- ===== RESEARCH ===== -->
+<section class="section" id="research">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot dapi"></span><span class="mono">Research</span></div>
+      <h2 class="title">Building — and repairing — the vascular system</h2>
+      <p class="lede">Blood and lymphatic vessels reach nearly every tissue in the body. We study how they are built during development, how the same programs are redeployed in disease and regeneration, and how that knowledge might be turned into therapy. Zebrafish are transparent for their first days of life, letting us watch vessels form in a living animal in real time.</p>
+    </div>
+    <div class="proj-grid">
+      <article class="proj reveal" style="--accent:var(--gfp)">
+        <div class="pid">01 · BLOOD</div>
+        <h3>Angiogenesis &amp; blood vessel patterning</h3>
+        <p>How endothelial cells sprout, migrate, and assemble into a patterned network of arteries and veins — and the signals that tell a vessel where to grow.</p>
+        <div class="tags"><span class="tag">Endothelium</span><span class="tag">Sprouting</span><span class="tag">Live imaging</span></div>
+      </article>
+      <article class="proj reveal" style="--accent:var(--cherry)">
+        <div class="pid">02 · LYMPHATIC</div>
+        <h3>Lymphangiogenesis &amp; vessel identity</h3>
+        <p>How lymphatic endothelial cells are specified and separated from the blood vasculature, and what this tells us about lymphedema and lymphatic disease.</p>
+        <div class="tags"><span class="tag">PROX1</span><span class="tag">VEGFC / FLT4</span><span class="tag">Lymphedema</span></div>
+      </article>
+      <article class="proj reveal" style="--accent:var(--dapi)">
+        <div class="pid">03 · SIGNALING</div>
+        <h3>VEGF signaling &amp; therapy resistance</h3>
+        <p>Mapping the redundancy within the VEGF family to understand how tumors and diseased tissue escape anti-VEGFA therapies — and engineering tools to block that escape.</p>
+        <div class="tags"><span class="tag">VEGF-A</span><span class="tag">Anti-angiogenics</span><span class="tag">AMD</span></div>
+      </article>
+      <article class="proj reveal" style="--accent:var(--gfp)">
+        <div class="pid">04 · DISEASE</div>
+        <h3>Vessels in disease &amp; regeneration</h3>
+        <p>Using zebrafish and mouse as living models to ask how vascular networks fail in disease, and how revascularization supports tissue repair and regeneration.</p>
+        <div class="tags"><span class="tag">Disease models</span><span class="tag">Regeneration</span><span class="tag">Translation</span></div>
+      </article>
+    </div>
+    <div class="approaches reveal">
+      <span class="mono">How we work</span>
+      <div class="appr-row">
+        <div class="appr"><span class="dot gfp"></span>Zebrafish genetics &middot; CRISPR/Cas9</div>
+        <div class="appr"><span class="dot dapi"></span>Mouse models</div>
+        <div class="appr"><span class="dot cherry"></span>In vivo live confocal imaging</div>
+        <div class="appr"><span class="dot gfp"></span>Transgenic fluorescent reporters</div>
+        <div class="appr"><span class="dot dapi"></span>Cell &amp; molecular biology</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section class="section" id="team">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot gfp"></span><span class="mono">Team</span></div>
+      <h2 class="title">The people behind the lab</h2>
+    </div>
+    <div class="pi-card reveal">
+      <div class="avatar photo"><img loading="lazy" decoding="async" src="pi.jpg" alt="Dr. Sébastien Gauvrit"></div>
+      <div class="who">
+        <h3>Dr. Sébastien Gauvrit</h3>
+        <div class="role">Principal Investigator · Assistant Professor</div>
+        <p>Originally from France, Sébastien trained in vascular and developmental biology and pioneered new models of vascular disease during his postdoctoral work in Germany. He now leads the lab as an Assistant Professor in the Department of Anatomy, Physiology &amp; Pharmacology at the University of Saskatchewan, where the team uses zebrafish and mouse models to understand how the vascular system forms in health and disease.</p>
+      </div>
+    </div>
+    <div class="members-grid">
+      <div class="member reveal"><div class="avatar">LL</div><h4>Liubov Lobanova</h4><div class="role">Research Technician</div></div>
+      <div class="member reveal"><div class="avatar">WM</div><h4>Wrynan Munabirul</h4><div class="role">MSc Student</div></div>
+      <div class="member reveal"><div class="avatar">AG</div><h4>Ana Gabriel</h4><div class="role">MSc Student</div></div>
+      <div class="member reveal"><div class="avatar">ZH</div><h4>Zyna Hernandez</h4><div class="role">MSc Student</div></div>
+      <div class="member reveal"><div class="avatar">ME</div><h4>Maureen Ekwunife</h4><div class="role">Summer Student</div></div>
+    </div>
+    <div class="alumni reveal">
+      <span class="mono">Alumni</span>
+      <div class="alum-row">
+        <div class="alum"><div class="ring">CZ</div><div><b>Cole Zapesocki</b><span>Former Lab Member</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot cherry"></span><span class="mono">Gallery</span></div>
+      <h2 class="title">From the scope</h2>
+      <p class="lede">A few favorites from the lab — the team, and the vessels we image in living zebrafish and whole-mount tissue.</p>
+    </div>
+    <figure class="gallery-feature reveal">
+      <img loading="lazy" decoding="async" src="larva.jpg" alt="Whole zebrafish larva vasculature">
+      <figcaption class="cap">Whole zebrafish larva · blood vasculature · transgenic reporter</figcaption>
+    </figure>
+    <div class="gallery-grid">
+      <figure class="plate reveal">
+        <img loading="lazy" decoding="async" src="team.jpg" alt="The Gauvrit Lab team, December 2025">
+        <div class="cap">The lab · December 2025</div>
+      </figure>
+      <figure class="plate reveal">
+        <img loading="lazy" decoding="async" src="brain.jpg" alt="Zebrafish brain angiogenesis at 3 dpf">
+        <div class="scalebar"><span></span></div>
+        <div class="cap">Brain angiogenesis · 3 dpf</div>
+      </figure>
+      <figure class="plate reveal">
+        <div class="field" style="background:var(--lymph) center/cover;filter:none"></div>
+        <div class="cap">Skin whole-mount · blood (blue) + lymphatics (green)</div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PUBLICATIONS ===== -->
+<section class="section" id="publications">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot dapi"></span><span class="mono">Publications</span></div>
+      <h2 class="title">Selected papers</h2>
+      <p class="lede">A selection from the lab and from Sébastien's earlier work. The full, up-to-date list lives on Google Scholar.</p>
+    </div>
+    <div class="pub-list reveal">
+      <div class="pub">
+        <div class="yr">2025</div>
+        <div class="cite">
+          <h4>Electron paramagnetic resonance spectroscopy for analysis of free radicals in zebrafish</h4>
+          <div class="auth">Sabetghadam Moghadam M, Wiens E, <b>Gauvrit S</b>, Sammynaiken R, Collins MM. &nbsp;<span class="venue">PLOS ONE</span> 20(2), e0318212</div>
+        </div>
+        <div class="links"><a href="https://doi.org/10.1371/journal.pone.0318212" target="_blank" rel="noopener">DOI</a></div>
+      </div>
+      <div class="pub">
+        <div class="yr">2024</div>
+        <div class="cite">
+          <h4>A β-catenin chromobody-based probe highlights endothelial maturation during vascular morphogenesis in vivo</h4>
+          <div class="auth"><b>Gauvrit S</b>, Zhao S, Rothbauer U, Stainier DYR. &nbsp;<span class="venue">Development</span> 151(11), dev202122</div>
+        </div>
+        <div class="links"><a href="https://doi.org/10.1242/dev.202122" target="_blank" rel="noopener">DOI</a></div>
+      </div>
+      <div class="pub">
+        <div class="yr">2022</div>
+        <div class="cite">
+          <h4>Modeling human cardiac arrhythmias: insights from zebrafish</h4>
+          <div class="auth"><b>Gauvrit S</b>, Bossaer J, Lee J, Collins MM. &nbsp;<span class="venue">J. Cardiovasc. Dev. Dis.</span> 9(1), 13</div>
+        </div>
+        <div class="links"><a href="https://doi.org/10.3390/jcdd9010013" target="_blank" rel="noopener">DOI</a></div>
+      </div>
+      <div class="pub">
+        <div class="yr">2020</div>
+        <div class="cite">
+          <h4>Nfatc1 promotes interstitial cell formation during cardiac valve development in zebrafish</h4>
+          <div class="auth">Gunawan F, Gentile A, <b>Gauvrit S</b>, Stainier DYR, Bensimon-Brito A. &nbsp;<span class="venue">Circulation Research</span> 126(8), 968–984</div>
+        </div>
+        <div class="links"><a href="https://doi.org/10.1161/CIRCRESAHA.119.315992" target="_blank" rel="noopener">DOI</a></div>
+      </div>
+      <div class="pub">
+        <div class="yr">2018</div>
+        <div class="cite">
+          <h4>HHEX is a transcriptional regulator of the VEGFC/FLT4/PROX1 signaling axis during vascular development</h4>
+          <div class="auth"><b>Gauvrit S</b>, Villaseñor A, Strilic B, Kitchen P, Collins MM, Marín-Juez R, et al., Stainier DYR. &nbsp;<span class="venue">Nature Communications</span> 9, 2704</div>
+        </div>
+        <div class="links"><a href="https://doi.org/10.1038/s41467-018-05039-1" target="_blank" rel="noopener">DOI</a></div>
+      </div>
+      <div class="pub">
+        <div class="yr">2016</div>
+        <div class="cite">
+          <h4>Fast revascularization of the injured area is essential to support zebrafish heart regeneration</h4>
+          <div class="auth">Marín-Juez R, Marass M, <b>Gauvrit S</b>, Rossi A, Lai SL, Materna SC, Black BL, Stainier DYR. &nbsp;<span class="venue">PNAS</span> 113(40), 11237–11242</div>
+        </div>
+        <div class="links"><a href="https://doi.org/10.1073/pnas.1605431113" target="_blank" rel="noopener">DOI</a></div>
+      </div>
+      <div class="pub">
+        <div class="yr">2016</div>
+        <div class="cite">
+          <h4>Real-time 3D visualization of cellular rearrangements during cardiac valve formation</h4>
+          <div class="auth">Pestel J, Ramadass R, <b>Gauvrit S</b>, Helker C, Herzog W, Stainier DYR. &nbsp;<span class="venue">Development</span> 143(13), 2217–2227</div>
+        </div>
+        <div class="links"><a href="https://doi.org/10.1242/dev.133272" target="_blank" rel="noopener">DOI</a></div>
+      </div>
+      <div class="pub">
+        <div class="yr">2016</div>
+        <div class="cite">
+          <h4>Regulation of Vegf signaling by natural and synthetic ligands</h4>
+          <div class="auth">Rossi A, et al. (incl. <b>Gauvrit S</b>), Stainier DYR. &nbsp;<span class="venue">Blood</span> 128(19), 2359–2366</div>
+        </div>
+        <div class="links"><a href="https://doi.org/10.1182/blood-2016-04-711192" target="_blank" rel="noopener">DOI</a></div>
+      </div>
+      <div class="pub">
+        <div class="yr">2014</div>
+        <div class="cite">
+          <h4>The role of RNA interference in the developmental separation of blood and lymphatic vasculature</h4>
+          <div class="auth"><b>Gauvrit S</b>, et al. &nbsp;<span class="venue">Vascular Cell</span> 6, 9</div>
+        </div>
+        <div class="links"><a href="https://doi.org/10.1186/2045-824X-6-9" target="_blank" rel="noopener">DOI</a></div>
+      </div>
+    </div>
+    <div class="scholar-link reveal">
+      <a href="https://scholar.google.ca/citations?user=0uYah5cAAAAJ&hl=en" target="_blank" rel="noopener">View the full, up-to-date list on Google Scholar →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWS ===== -->
+<section class="section" id="news">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot gfp"></span><span class="mono">News</span></div>
+      <h2 class="title">What's happening</h2>
+    </div>
+    <div class="news-list reveal">
+
+      <div class="news">
+        <div class="when">2025</div>
+        <div>
+          <h4>Two NSERC grants to grow the lab</h4>
+          <p>The lab received two NSERC awards totalling $340,000 to expand USask's zebrafish facility and advance our vascular modeling work.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== SUPPORT ===== -->
+<section class="section" id="support">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot cherry"></span><span class="mono">Support</span></div>
+      <h2 class="title">Support the lab</h2>
+      <p class="lede">Philanthropy moves discovery faster than grants alone. If you'd like to help advance our research into vascular disease, I'd be glad to hear from you.</p>
+    </div>
+    <div class="panel reveal">
+      <h3>Partner with our research</h3>
+      <p>Gifts to the lab have a direct and lasting impact. Support can help us:</p>
+      <ul>
+        <li>Sustain and expand our zebrafish imaging facility</li>
+        <li>Train the next generation of vascular biologists</li>
+        <li>Push toward new approaches for diseases like age-related macular degeneration and lymphedema</li>
+      </ul>
+      <p style="margin-bottom:22px">Whether you're an individual, a foundation, or an industry partner, gifts can be arranged through the University of Saskatchewan and directed to our work. Reach out and let's talk about what's possible.</p>
+      <a class="btn" href="mailto:sebastien.gauvrit@usask.ca?subject=Supporting%20the%20Gauvrit%20Lab">Contact Sébastien about giving</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot dapi"></span><span class="mono">Contact</span></div>
+      <h2 class="title">Get in touch</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="row"><div class="k">Email</div><div class="v"><a href="mailto:sebastien.gauvrit@usask.ca">sebastien.gauvrit@usask.ca</a></div></div>
+        <div class="row"><div class="k">Department</div><div class="v">Anatomy, Physiology &amp; Pharmacology<br>College of Medicine, University of Saskatchewan</div></div>
+        <div class="row"><div class="k">Find us</div><div class="v">Health Sciences Building (HLTH), Room 3B40<br>107 Wiggins Road, Saskatoon, SK&nbsp;S7N&nbsp;5E5</div></div>
+        <div class="row"><div class="k">Profiles</div><div class="v"><a href="https://medicine.usask.ca/profiles/anatomy-physiology-pharmacology/sebastien-gauvrit.php" target="_blank" rel="noopener">USask Faculty</a> &nbsp;·&nbsp; <a href="https://scholar.google.ca/citations?user=0uYah5cAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></div></div>
+      </div>
+      <div class="landack reveal">
+        <span class="mono">Land Acknowledgement</span>
+        <p>The University of Saskatchewan's main campus is situated on <a href="https://indigenous.usask.ca/indigenization-reconciliation/Land-Acknowledgement.php" target="_blank" rel="noopener">Treaty 6 Territory and the Homeland of the Métis</a>. We pay our respect to the First Nations and Métis ancestors of this place and reaffirm our relationship with one another.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FUNDING ===== -->
+<section class="section" id="funding">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-bottom:34px">
+      <div class="eyebrow"><span class="dot gfp"></span><span class="mono">Funding &amp; Support</span></div>
+      <h2 class="title">With thanks to our funders</h2>
+      <p class="lede">Our research is made possible by the generous support of these organizations.</p>
+    </div>
+    <div class="funding-card reveal">
+      <img loading="lazy" decoding="async" src="nserc.png" alt="Natural Sciences and Engineering Research Council of Canada (NSERC / CRSNG)">
+      <img loading="lazy" decoding="async" src="usask.jpg" alt="University of Saskatchewan, College of Medicine">
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <span class="brand" style="font-size:17px"><span class="seal"></span>Gauvrit Lab</span>
+    <span class="mono">© <span id="yr"></span> Gauvrit Lab · Vascular Development · University of Saskatchewan</span>
+  </div>
+</footer>
+
+<script>
+  const scope = document.getElementById('scope');
+  document.querySelectorAll('.chip').forEach(chip=>{
+    chip.addEventListener('click',()=>{
+      const ch = chip.dataset.ch;
+      const on = chip.getAttribute('aria-pressed')==='true';
+      chip.setAttribute('aria-pressed', String(!on));
+      scope.classList.toggle('off-'+ch, on);
+    });
+  });
+  const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!reduce){
+    const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  } else { document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')); }
+  const navLinks=[...document.querySelectorAll('nav.links a')];
+  const sections=navLinks.map(a=>document.querySelector(a.getAttribute('href')));
+  const spy=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}});},{rootMargin:'-45% 0px -50% 0px'});
+  sections.forEach(s=>s&&spy.observe(s));
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
