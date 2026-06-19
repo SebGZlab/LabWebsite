@@ -1,21 +1,10 @@
 <!DOCTYPE html>
 <!--
-  GAUVRIT LAB — Vascular Development in Health & Disease
+  GAUVRIT LAB - Vascular Development in Health and Disease
   University of Saskatchewan, College of Medicine
-  -----------------------------------------------------
-  HOW TO EDIT THE NEWS:  find the section that starts with  <!-- ===== NEWS ===== -->
-  Each item is one  <div class="news"> ... </div>  block:
-      <div class="news">
-        <div class="when">2025</div>          <-- the date (left column)
-        <div>
-          <h4>Headline goes here</h4>          <-- the title
-          <p>One or two sentences.</p>          <-- the blurb
-        </div>
-      </div>
-  To ADD news: copy a whole block and paste it as the FIRST item (newest on top).
-  To REMOVE news: delete the whole block. To EDIT: just change the text between the tags.
-
-  Images (headshot + 3 micrographs) are embedded directly in this file, so it works anywhere.
+  To edit the news, find the section labelled NEWS below and change the text inside each
+  div with class "news". To add an item, copy one such block and paste it as the first one.
+  Images are embedded directly in this file, so it works anywhere.
 -->
 <html lang="en">
 <head>
@@ -63,7 +52,7 @@
   nav.links a.active{color:var(--text)}
   nav.links a.active::after{content:"";position:absolute;left:11px;right:11px;bottom:2px;height:2px;border-radius:2px;background:var(--dapi);box-shadow:0 0 8px var(--dapi)}
 
-  .hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden}
+  .hero{position:relative;min-height:92vh;display:flex;flex-direction:column;justify-content:center;gap:24px;overflow:hidden;padding:96px 0 72px}
   .scope{position:absolute;inset:0;z-index:0}
   .channel{position:absolute;inset:-15%;filter:blur(38px);mix-blend-mode:screen;transition:opacity .5s ease;will-change:transform}
   .channel.dapi{background:radial-gradient(closest-side,rgba(84,214,242,.9),transparent 70%) 18% 34%/280px 280px no-repeat,radial-gradient(closest-side,rgba(84,214,242,.7),transparent 70%) 62% 22%/220px 220px no-repeat,radial-gradient(closest-side,rgba(84,214,242,.8),transparent 70%) 78% 70%/320px 320px no-repeat,radial-gradient(closest-side,rgba(84,214,242,.6),transparent 70%) 40% 78%/200px 200px no-repeat;animation:drift1 26s ease-in-out infinite alternate}
@@ -130,7 +119,13 @@
   .gallery-feature img{width:100%;display:block}
   .gallery-feature .cap,.plate .cap{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;z-index:2;background:linear-gradient(transparent,rgba(4,6,13,.92));font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:#c9d2ee;text-transform:uppercase}
   .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .plate{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:#04060d}
+  .plate{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:#04060d;cursor:zoom-in}
+  .plate::after{content:"⤢";position:absolute;top:10px;left:12px;z-index:3;font-size:14px;color:#fff;opacity:0;transition:opacity .2s;text-shadow:0 1px 4px rgba(0,0,0,.7)}
+  .plate:hover::after{opacity:.85}
+  .lightbox{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(4,6,13,.93);backdrop-filter:blur(6px);padding:24px;cursor:zoom-out}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:96vw;max-height:92vh;border-radius:10px;border:1px solid var(--line-strong);box-shadow:0 24px 70px rgba(0,0,0,.6)}
+  .lightbox .lb-close{position:fixed;top:18px;right:22px;font-family:var(--mono);font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:#cdd6f0;border:1px solid var(--line-strong);border-radius:8px;padding:8px 13px;background:rgba(8,10,18,.5)}
   .plate .field{position:absolute;inset:0;filter:blur(8px)}
   .plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .plate .scalebar{position:absolute;right:14px;top:14px;z-index:2;width:46px;height:3px;background:#fff;opacity:.85;border-radius:2px}
@@ -177,11 +172,13 @@
   .landack a:hover{border-color:var(--dapi)}
   .page-bg{position:fixed;inset:0;z-index:-1;background:var(--lymph) center/cover;filter:brightness(1.12) saturate(1.2)}
   .page-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,10,18,.5),rgba(8,10,18,.62))}
-  .hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(8,10,18,.82),rgba(8,10,18,.35) 55%,transparent)}
-  .hero .scope{opacity:.85}
+  .hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(8,10,18,.4),transparent 26%,transparent 72%,rgba(8,10,18,.45))}
+  .hero-larva{position:relative;z-index:2;width:100vw;left:50%;transform:translateX(-50%);margin:4px 0 0}
+  .hero-larva img{width:100%;display:block;mix-blend-mode:screen}
+  .hero-cap{position:relative;z-index:2;text-align:center;color:var(--faint);margin-top:4px}
   .funding-card{background:#fff;border-radius:18px;padding:38px 56px;display:flex;gap:64px;align-items:center;justify-content:center;flex-wrap:wrap}
   .funding-card img{height:94px;width:auto}
-  @media (max-width:520px){.funding-card{gap:34px;padding:28px}.funding-card img{height:62px}}
+  @media (max-width:520px){.funding-card{flex-direction:column;gap:26px;padding:28px}.funding-card img{height:auto;max-width:80%;width:auto}}
 
   footer{border-top:1px solid var(--line);padding:38px 0}
   .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
@@ -233,24 +230,18 @@
 
 <!-- ===== HOME ===== -->
 <section class="hero" id="home">
-  <div class="scope" id="scope" aria-hidden="true">
-    <div class="channel cherry"></div>
-    <div class="channel gfp"></div>
-    <div class="channel dapi"></div>
-    <div class="nuclei"></div>
-  </div>
-  <div class="vignette" aria-hidden="true"></div>
   <div class="wrap hero-in">
     <span class="mono">Vascular Development in Health &amp; Disease &nbsp;·&nbsp; University of Saskatchewan</span>
     <h1>How the body builds its <em>blood and lymphatic vessels</em>.</h1>
+  </div>
+
+  <figure class="hero-larva">
+    <img loading="lazy" decoding="async" src="larva.jpg" alt="Whole zebrafish larva with fluorescently labelled blood vasculature">
+  </figure>
+  <div class="hero-cap mono">Zebrafish larva · blood vasculature · live confocal imaging</div>
+
+  <div class="wrap hero-in">
     <p class="sub">We use zebrafish and mouse models, live imaging, and genetics to map how vascular networks form — and what goes wrong in vascular disease.</p>
-    <div class="chips" role="group" aria-label="Toggle imaging channels">
-      <span class="chip-label">Channels</span>
-      <button class="chip" data-ch="dapi" aria-pressed="true"><span class="dot dapi"></span>DAPI</button>
-      <button class="chip" data-ch="gfp" aria-pressed="true"><span class="dot gfp"></span>kdrl:EGFP</button>
-      <button class="chip" data-ch="cherry" aria-pressed="true"><span class="dot cherry"></span>lyve1b:DsRed</button>
-    </div>
-    <div class="chan-legend">Nuclei &nbsp;·&nbsp; Blood vessels &nbsp;·&nbsp; Lymphatics — toggle to merge the channels</div>
   </div>
   <div class="scroll-cue mono">↓ &nbsp;Scroll</div>
 </section>
@@ -341,10 +332,6 @@
       <h2 class="title">From the scope</h2>
       <p class="lede">A few favorites from the lab — the team, and the vessels we image in living zebrafish and whole-mount tissue.</p>
     </div>
-    <figure class="gallery-feature reveal">
-      <img loading="lazy" decoding="async" src="larva.jpg" alt="Whole zebrafish larva vasculature">
-      <figcaption class="cap">Whole zebrafish larva · blood vasculature · transgenic reporter</figcaption>
-    </figure>
     <div class="gallery-grid">
       <figure class="plate reveal">
         <img loading="lazy" decoding="async" src="team.jpg" alt="The Gauvrit Lab team, December 2025">
@@ -461,6 +448,14 @@
     <div class="news-list reveal">
 
       <div class="news">
+        <div class="when">Jul 30, 2025</div>
+        <div>
+          <h4>Featured on the Research Under the Scope podcast</h4>
+          <p>Sébastien was a guest on the University of Saskatchewan's <em>Research Under the Scope</em> podcast — "Fishing for Answers in Vascular Biology." <a href="https://podcasts.apple.com/us/podcast/dr-s%C3%A9bastien-gauvrit-fishing-for-answers-in-vascular/id1513240190?i=1000719766009" target="_blank" rel="noopener" style="color:var(--dapi)">Listen on Apple Podcasts →</a></p>
+        </div>
+      </div>
+
+      <div class="news">
         <div class="when">2025</div>
         <div>
           <h4>Two NSERC grants to grow the lab</h4>
@@ -507,6 +502,7 @@
         <div class="row"><div class="k">Department</div><div class="v">Anatomy, Physiology &amp; Pharmacology<br>College of Medicine, University of Saskatchewan</div></div>
         <div class="row"><div class="k">Find us</div><div class="v">Health Sciences Building (HLTH), Room 3B40<br>107 Wiggins Road, Saskatoon, SK&nbsp;S7N&nbsp;5E5</div></div>
         <div class="row"><div class="k">Profiles</div><div class="v"><a href="https://medicine.usask.ca/profiles/anatomy-physiology-pharmacology/sebastien-gauvrit.php" target="_blank" rel="noopener">USask Faculty</a> &nbsp;·&nbsp; <a href="https://scholar.google.ca/citations?user=0uYah5cAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></div></div>
+        <div class="row"><div class="k">Joining the lab</div><div class="v">If you're interested in joining the lab, please email me your CV, academic transcript, and a short statement of your research motivation.</div></div>
       </div>
       <div class="landack reveal">
         <span class="mono">Land Acknowledgement</span>
@@ -538,6 +534,11 @@
   </div>
 </footer>
 
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <span class="lb-close">Close ✕</span>
+  <img alt="Enlarged gallery image">
+</div>
+
 <script>
   const scope = document.getElementById('scope');
   document.querySelectorAll('.chip').forEach(chip=>{
@@ -558,6 +559,22 @@
   const spy=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}});},{rootMargin:'-45% 0px -50% 0px'});
   sections.forEach(s=>s&&spy.observe(s));
   document.getElementById('yr').textContent=new Date().getFullYear();
+
+  // Click-to-enlarge gallery
+  const lb=document.getElementById('lightbox'), lbImg=lb.querySelector('img');
+  function openLB(src){ if(!src) return; lbImg.src=src; lb.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeLB(){ lb.classList.remove('open'); lbImg.removeAttribute('src'); document.body.style.overflow=''; }
+  document.querySelectorAll('.plate').forEach(p=>{
+    p.addEventListener('click',()=>{
+      const img=p.querySelector('img');
+      if(img){ openLB(img.currentSrc||img.src); return; }
+      const field=p.querySelector('.field')||p;
+      const m=getComputedStyle(field).backgroundImage.match(/url\(["']?(.*?)["']?\)/);
+      if(m) openLB(m[1]);
+    });
+  });
+  lb.addEventListener('click',closeLB);
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLB(); });
 </script>
 </body>
 </html>
