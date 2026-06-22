@@ -48,6 +48,11 @@
   .brand .seal{width:22px;height:22px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,var(--dapi),transparent 60%),radial-gradient(circle at 68% 64%,var(--cherry),transparent 58%),radial-gradient(circle at 50% 70%,var(--gfp),transparent 62%);box-shadow:0 0 16px rgba(84,214,242,.5)}
   nav.links{display:flex;gap:2px}
   nav.links a{font-size:14.5px;font-weight:600;color:var(--muted);padding:8px 11px;border-radius:8px;position:relative;transition:color .2s;white-space:nowrap}
+  .lang-toggle{display:flex;align-items:center;gap:3px;flex:none}
+  .lang-toggle button{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted);padding:5px 9px;border-radius:7px;border:1px solid transparent;background:none;cursor:pointer;transition:.2s}
+  .lang-toggle button:hover{color:var(--text)}
+  .lang-toggle button[aria-pressed="true"]{color:var(--bg);background:var(--dapi);font-weight:700}
+  .lang-toggle .lang-sep{color:var(--faint);font-size:12px}
   nav.links a:hover{color:var(--text)}
   nav.links a.active{color:var(--text)}
   nav.links a.active::after{content:"";position:absolute;left:11px;right:11px;bottom:2px;height:2px;border-radius:2px;background:var(--dapi);box-shadow:0 0 8px var(--dapi)}
@@ -105,6 +110,7 @@
   .member{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:24px;text-align:center;transition:border-color .25s}
   .member:hover{border-color:var(--line-strong)}
   .member .avatar{margin:0 auto 16px;width:64px;height:64px;font-size:20px}
+  .member .full-photo{width:100%;height:auto;display:block;border-radius:12px;margin:0 auto 16px;border:1px solid var(--line-strong)}
   .member h4{font-family:var(--display);font-weight:700;font-size:17px;margin:0 0 4px}
   .member .role{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
   .alumni{margin-top:46px}
@@ -232,79 +238,84 @@
   <div class="wrap nav-in">
     <a class="brand" href="#home"><span class="seal"></span>Gauvrit Lab</a>
     <nav class="links" aria-label="Primary">
-      <a href="#home">Home</a>
-      <a href="#research">Research</a>
-      <a href="#zebrafish">Model</a>
-      <a href="#team">Team</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#publications">Publications</a>
-      <a href="#news">News</a>
-      <a href="#support">Support</a>
-      <a href="#contact">Contact</a>
+      <a href="#home" data-i18n="nav.home">Home</a>
+      <a href="#research" data-i18n="nav.research">Research</a>
+      <a href="#zebrafish" data-i18n="nav.model">Model</a>
+      <a href="#team" data-i18n="nav.team">Team</a>
+      <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+      <a href="#publications" data-i18n="nav.publications">Publications</a>
+      <a href="#news" data-i18n="nav.news">News</a>
+      <a href="#support" data-i18n="nav.support">Support</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
+    <div class="lang-toggle" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+      <span class="lang-sep">/</span>
+      <button type="button" data-lang-btn="fr" aria-pressed="false">FR</button>
+    </div>
   </div>
 </header>
 
 <!-- ===== HOME ===== -->
 <section class="hero" id="home">
   <div class="wrap hero-in">
-    <span class="mono">Vascular Development in Health &amp; Disease &nbsp;·&nbsp; University of Saskatchewan</span>
-    <h1>How the body builds its <em>blood and lymphatic vessels</em>.</h1>
+    <span class="mono" data-i18n="hero.eyebrow">Vascular Development in Health &amp; Disease &nbsp;·&nbsp; University of Saskatchewan</span>
+    <h1 data-i18n="hero.h1">How the body builds its <em>blood and lymphatic vessels</em>.</h1>
   </div>
 
   <figure class="hero-larva">
     <img loading="lazy" decoding="async" src="larva.jpg" alt="Whole zebrafish larva with fluorescently labelled blood vasculature">
   </figure>
-  <div class="hero-cap mono">Zebrafish larva · blood vasculature · live confocal imaging</div>
+  <div class="hero-cap mono" data-i18n="hero.cap">Zebrafish larva · blood vasculature · live confocal imaging</div>
 
   <div class="wrap hero-in">
-    <p class="sub">We use zebrafish and mouse models, live imaging, and genetics to map how vascular networks form — and what goes wrong in vascular disease.</p>
+    <p class="sub" data-i18n="hero.sub">We use zebrafish and mouse models, live imaging, and genetics to map how vascular networks form — and what goes wrong in vascular disease.</p>
   </div>
-  <div class="scroll-cue mono">↓ &nbsp;Scroll</div>
+  <div class="scroll-cue mono" data-i18n="hero.scroll">↓ &nbsp;Scroll</div>
 </section>
 
 <!-- ===== RESEARCH ===== -->
 <section class="section" id="research">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow"><span class="dot dapi"></span><span class="mono">Research</span></div>
-      <h2 class="title">Building — and repairing — the vascular system</h2>
-      <p class="lede">Blood and lymphatic vessels reach nearly every tissue in the body. We study how they are built during development, how the same programs are redeployed in disease and regeneration, and how that knowledge might be turned into therapy. Zebrafish are transparent for their first days of life, letting us watch vessels form in a living animal in real time.</p>
+      <div class="eyebrow"><span class="dot dapi"></span><span class="mono" data-i18n="res.eyebrow">Research</span></div>
+      <h2 class="title" data-i18n="res.title">Building — and repairing — the vascular system</h2>
+      <p class="lede" data-i18n="res.lede">Blood and lymphatic vessels reach nearly every tissue in the body. We study how they are built during development, how the same programs are redeployed in disease and regeneration, and how that knowledge might be turned into therapy. Zebrafish are transparent for their first days of life, letting us watch vessels form in a living animal in real time.</p>
     </div>
     <div class="proj-grid">
       <article class="proj reveal" style="--accent:var(--gfp)">
-        <div class="pid">01 · BLOOD</div>
-        <h3>Angiogenesis &amp; blood vessel patterning</h3>
-        <p>How endothelial cells sprout, migrate, and assemble into a patterned network of arteries and veins — and the signals that tell a vessel where to grow.</p>
-        <div class="tags"><span class="tag">Endothelium</span><span class="tag">Sprouting</span><span class="tag">Live imaging</span></div>
+        <div class="pid" data-i18n="res.pid1">01 · BLOOD</div>
+        <h3 data-i18n="res.h3_1">Angiogenesis &amp; blood vessel patterning</h3>
+        <p data-i18n="res.p1">How endothelial cells sprout, migrate, and assemble into a patterned network of arteries and veins — and the signals that tell a vessel where to grow.</p>
+        <div class="tags"><span class="tag" data-i18n="res.tag.endo">Endothelium</span><span class="tag" data-i18n="res.tag.sprout">Sprouting</span><span class="tag" data-i18n="res.tag.live">Live imaging</span></div>
       </article>
       <article class="proj reveal" style="--accent:var(--cherry)">
-        <div class="pid">02 · LYMPHATIC</div>
-        <h3>Lymphangiogenesis &amp; vessel identity</h3>
-        <p>How lymphatic endothelial cells are specified and separated from the blood vasculature, and what this tells us about lymphedema and lymphatic disease.</p>
-        <div class="tags"><span class="tag">PROX1</span><span class="tag">VEGFC / FLT4</span><span class="tag">Lymphedema</span></div>
+        <div class="pid" data-i18n="res.pid2">02 · LYMPHATIC</div>
+        <h3 data-i18n="res.h3_2">Lymphangiogenesis &amp; vessel identity</h3>
+        <p data-i18n="res.p2">How lymphatic endothelial cells are specified and separated from the blood vasculature, and what this tells us about lymphedema and lymphatic disease.</p>
+        <div class="tags"><span class="tag">PROX1</span><span class="tag">VEGFC / FLT4</span><span class="tag" data-i18n="res.tag.lymphedema">Lymphedema</span></div>
       </article>
       <article class="proj reveal" style="--accent:var(--dapi)">
-        <div class="pid">03 · SIGNALING</div>
-        <h3>VEGF signaling &amp; therapy resistance</h3>
-        <p>Mapping the redundancy within the VEGF family to understand how tumors and diseased tissue escape anti-VEGFA therapies — and engineering tools to block that escape.</p>
-        <div class="tags"><span class="tag">VEGF-A</span><span class="tag">Anti-angiogenics</span><span class="tag">AMD</span></div>
+        <div class="pid" data-i18n="res.pid3">03 · SIGNALING</div>
+        <h3 data-i18n="res.h3_3">VEGF signaling &amp; therapy resistance</h3>
+        <p data-i18n="res.p3">Mapping the redundancy within the VEGF family to understand how tumors and diseased tissue escape anti-VEGFA therapies — and engineering tools to block that escape.</p>
+        <div class="tags"><span class="tag">VEGF-A</span><span class="tag" data-i18n="res.tag.antiang">Anti-angiogenics</span><span class="tag" data-i18n="res.tag.amd">AMD</span></div>
       </article>
       <article class="proj reveal" style="--accent:var(--gfp)">
-        <div class="pid">04 · DISEASE</div>
-        <h3>Vessels in disease &amp; regeneration</h3>
-        <p>Using zebrafish and mouse as living models to ask how vascular networks fail in disease, and how revascularization supports tissue repair and regeneration.</p>
-        <div class="tags"><span class="tag">Disease models</span><span class="tag">Regeneration</span><span class="tag">Translation</span></div>
+        <div class="pid" data-i18n="res.pid4">04 · DISEASE</div>
+        <h3 data-i18n="res.h3_4">Vessels in disease &amp; regeneration</h3>
+        <p data-i18n="res.p4">Using zebrafish and mouse as living models to ask how vascular networks fail in disease, and how revascularization supports tissue repair and regeneration.</p>
+        <div class="tags"><span class="tag" data-i18n="res.tag.dmod">Disease models</span><span class="tag" data-i18n="res.tag.regen">Regeneration</span><span class="tag" data-i18n="res.tag.transl">Translation</span></div>
       </article>
     </div>
     <div class="approaches reveal">
-      <span class="mono">How we work</span>
+      <span class="mono" data-i18n="res.howwework">How we work</span>
       <div class="appr-row">
-        <div class="appr"><span class="dot gfp"></span>Zebrafish genetics &middot; CRISPR/Cas9</div>
-        <div class="appr"><span class="dot dapi"></span>Mouse models</div>
-        <div class="appr"><span class="dot cherry"></span>In vivo live confocal imaging</div>
-        <div class="appr"><span class="dot gfp"></span>Transgenic fluorescent reporters</div>
-        <div class="appr"><span class="dot dapi"></span>Cell &amp; molecular biology</div>
+        <div class="appr" data-i18n="res.appr1"><span class="dot gfp"></span>Zebrafish genetics &middot; CRISPR/Cas9</div>
+        <div class="appr" data-i18n="res.appr2"><span class="dot dapi"></span>Mouse models</div>
+        <div class="appr" data-i18n="res.appr3"><span class="dot cherry"></span>In vivo live confocal imaging</div>
+        <div class="appr" data-i18n="res.appr4"><span class="dot gfp"></span>Transgenic fluorescent reporters</div>
+        <div class="appr" data-i18n="res.appr5"><span class="dot dapi"></span>Cell &amp; molecular biology</div>
       </div>
     </div>
   </div>
@@ -314,20 +325,20 @@
 <section class="section" id="zebrafish">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow"><span class="dot dapi"></span><span class="mono">Model system</span></div>
-      <h2 class="title">Why zebrafish?</h2>
-      <p class="lede">A small tropical fish that lets us watch blood and lymphatic vessels assemble, live, inside a developing animal.</p>
+      <div class="eyebrow"><span class="dot dapi"></span><span class="mono" data-i18n="zf.eyebrow">Model system</span></div>
+      <h2 class="title" data-i18n="zf.title">Why zebrafish?</h2>
+      <p class="lede" data-i18n="zf.lede">A small tropical fish that lets us watch blood and lymphatic vessels assemble, live, inside a developing animal.</p>
     </div>
     <div class="fish-grid">
       <div class="fish-copy reveal">
-        <p>The zebrafish (<em>Danio rerio</em>) is one of the most powerful models in vascular biology. Its embryos and larvae develop externally and are almost completely transparent, so an entire vascular network can be imaged as it forms in a living animal — at a resolution and over a timescale that simply aren't possible in mammals.</p>
-        <p>Just as importantly, the genetic toolkit is powerful. Transgenic lines light up endothelial cells and lymphatics in fluorescent colour, CRISPR/Cas9 makes gene editing fast and precise, and the core pathways that build vessels are conserved with humans. Large clutches and rapid development make zebrafish ideal for genetic screens and for asking what happens when vascular development goes wrong. That combination is exactly why we use them to study the vasculature in health and disease.</p>
+        <p data-i18n="zf.p1">The zebrafish (<em>Danio rerio</em>) is one of the most powerful models in vascular biology. Its embryos and larvae develop externally and are almost completely transparent, so an entire vascular network can be imaged as it forms in a living animal — at a resolution and over a timescale that simply aren't possible in mammals.</p>
+        <p data-i18n="zf.p2">Just as importantly, the genetic toolkit is powerful. Transgenic lines light up endothelial cells and lymphatics in fluorescent colour, CRISPR/Cas9 makes gene editing fast and precise, and the core pathways that build vessels are conserved with humans. Large clutches and rapid development make zebrafish ideal for genetic screens and for asking what happens when vascular development goes wrong. That combination is exactly why we use them to study the vasculature in health and disease.</p>
         <ul class="fish-points">
-          <li>Optically transparent &mdash; live imaging of vessels <em>in vivo</em></li>
-          <li>Rapid, external development and large clutches</li>
-          <li>Vascular signalling conserved with humans</li>
-          <li>Transgenic reporters that label blood vessels and lymphatics</li>
-          <li>CRISPR/Cas9 genetics, and amenable to drug screening</li>
+          <li data-i18n="zf.li1">Optically transparent &mdash; live imaging of vessels <em>in vivo</em></li>
+          <li data-i18n="zf.li2">Rapid, external development and large clutches</li>
+          <li data-i18n="zf.li3">Vascular signalling conserved with humans</li>
+          <li data-i18n="zf.li4">Transgenic reporters that label blood vessels and lymphatics</li>
+          <li data-i18n="zf.li5">CRISPR/Cas9 genetics, and amenable to drug screening</li>
         </ul>
       </div>
       <figure class="fish-video reveal">
@@ -335,7 +346,7 @@
           <source src="nanobody.mp4" type="video/mp4">
           Your browser doesn&rsquo;t support embedded video.
         </video>
-        <figcaption>Live imaging with a nanobody-based fluorescent reporter (shown in inverted greyscale) &mdash; the kind of probe engineering and live microscopy at the core of the lab's work.</figcaption>
+        <figcaption data-i18n="zf.figcap">Live imaging with a nanobody-based fluorescent reporter (shown in inverted greyscale) &mdash; the kind of probe engineering and live microscopy at the core of the lab's work.</figcaption>
       </figure>
     </div>
   </div>
@@ -345,28 +356,28 @@
 <section class="section" id="team">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow"><span class="dot gfp"></span><span class="mono">Team</span></div>
-      <h2 class="title">The people behind the lab</h2>
+      <div class="eyebrow"><span class="dot gfp"></span><span class="mono" data-i18n="team.eyebrow">Team</span></div>
+      <h2 class="title" data-i18n="team.title">The people behind the lab</h2>
     </div>
     <div class="pi-card reveal">
       <div class="avatar photo"><img loading="lazy" decoding="async" src="pi.jpg" alt="Dr. Sébastien Gauvrit"></div>
       <div class="who">
         <h3>Dr. Sébastien Gauvrit</h3>
-        <div class="role">Principal Investigator · Assistant Professor</div>
-        <p>Originally from France, Sébastien trained in vascular and developmental biology and pioneered new models of vascular disease during his postdoctoral work in Germany. He now leads the lab as an Assistant Professor in the Department of Anatomy, Physiology &amp; Pharmacology at the University of Saskatchewan, where the team uses zebrafish and mouse models to understand how the vascular system forms in health and disease.</p>
+        <div class="role" data-i18n="team.pi.role">Principal Investigator · Assistant Professor</div>
+        <p data-i18n="team.pi.bio">Originally from France, Sébastien trained in vascular and developmental biology and pioneered new models of vascular disease during his postdoctoral work in Germany. He now leads the lab as an Assistant Professor in the Department of Anatomy, Physiology &amp; Pharmacology at the University of Saskatchewan, where the team uses zebrafish and mouse models to understand how the vascular system forms in health and disease.</p>
       </div>
     </div>
     <div class="members-grid">
-      <div class="member reveal"><div class="avatar">LL</div><h4>Liubov Lobanova</h4><div class="role">Research Technician</div></div>
-      <div class="member reveal"><div class="avatar">WM</div><h4>Wrynan Munabirul</h4><div class="role">MSc Student</div></div>
-      <div class="member reveal"><div class="avatar photo"><img loading="lazy" decoding="async" src="ana.jpg" alt="Ana Gabriel"></div><h4>Ana Gabriel</h4><div class="role">MSc Student</div><details class="m-bio"><summary>Read bio</summary><p>Ana and her four-legged furry monster are transplants from the U.S. An animal lover at heart, Ana completed her B.Sc. in Biology at Rockhurst University, where she fell in love with a plate of developing zebrafish embryos. She enjoys running (slowly) across the beautiful Saskatchewan prairies with her monster, who usually drags her for miles.</p><p>In the Gauvrit lab, Ana studies the influence of key genes in the development of the lymphatic system using both zebrafish and mice. She enjoys building the transgenic tools that will facilitate this project and sweet-talking bacteria into making the genes she wants.</p></details></div>
-      <div class="member reveal"><div class="avatar">ZH</div><h4>Zyna Hernandez</h4><div class="role">MSc Student</div></div>
-      <div class="member reveal"><div class="avatar">ME</div><h4>Maureen Ekwunife</h4><div class="role">Summer Student</div></div>
+      <div class="member reveal"><div class="avatar">LL</div><h4>Liubov Lobanova</h4><div class="role" data-i18n="team.role.tech">Research Technician</div></div>
+      <div class="member reveal"><div class="avatar">WM</div><h4>Wrynan Munabirul</h4><div class="role" data-i18n="team.role.msc">MSc Student</div></div>
+      <div class="member reveal"><img class="full-photo" src="ana.jpg" alt="Ana Gabriel"><h4>Ana Gabriel</h4><div class="role" data-i18n="team.role.msc">MSc Student</div><details class="m-bio"><summary data-i18n="team.readbio">Read bio</summary><p data-i18n="team.ana.bio1">Ana and her four-legged furry monster are transplants from the U.S. An animal lover at heart, Ana completed her B.Sc. in Biology at Rockhurst University, where she fell in love with a plate of developing zebrafish embryos. She enjoys running (slowly) across the beautiful Saskatchewan prairies with her monster, who usually drags her for miles.</p><p data-i18n="team.ana.bio2">In the Gauvrit lab, Ana studies the influence of key genes in the development of the lymphatic system using both zebrafish and mice. She enjoys building the transgenic tools that will facilitate this project and sweet-talking bacteria into making the genes she wants.</p></details></div>
+      <div class="member reveal"><div class="avatar">ZH</div><h4>Zyna Hernandez</h4><div class="role" data-i18n="team.role.msc">MSc Student</div></div>
+      <div class="member reveal"><div class="avatar">ME</div><h4>Maureen Ekwunife</h4><div class="role" data-i18n="team.role.summer">Summer Student</div></div>
     </div>
     <div class="alumni reveal">
-      <span class="mono">Alumni</span>
+      <span class="mono" data-i18n="team.alumni">Alumni</span>
       <div class="alum-row">
-        <div class="alum"><div class="ring">CZ</div><div><b>Cole Zapesocki</b><span>Former Lab Member</span></div></div>
+        <div class="alum"><div class="ring">CZ</div><div><b>Cole Zapesocki</b><span data-i18n="team.alum.role">Former Lab Member</span></div></div>
       </div>
     </div>
   </div>
@@ -376,23 +387,23 @@
 <section class="section" id="gallery">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow"><span class="dot cherry"></span><span class="mono">Gallery</span></div>
-      <h2 class="title">From the scope</h2>
-      <p class="lede">A few favorites from the lab — the team, and the vessels we image in living zebrafish and whole-mount tissue.</p>
+      <div class="eyebrow"><span class="dot cherry"></span><span class="mono" data-i18n="gal.eyebrow">Gallery</span></div>
+      <h2 class="title" data-i18n="gal.title">From the scope</h2>
+      <p class="lede" data-i18n="gal.lede">A few favorites from the lab — the team, and the vessels we image in living zebrafish and whole-mount tissue.</p>
     </div>
     <div class="gallery-grid">
       <figure class="plate reveal">
         <img loading="lazy" decoding="async" src="team.jpg" alt="The Gauvrit Lab team, December 2025">
-        <div class="cap">The lab · December 2025</div>
+        <div class="cap" data-i18n="gal.cap1">The lab · December 2025</div>
       </figure>
       <figure class="plate reveal">
         <img loading="lazy" decoding="async" src="brain.jpg" alt="Zebrafish brain angiogenesis at 3 dpf">
         <div class="scalebar"><span></span></div>
-        <div class="cap">Brain angiogenesis · 3 dpf</div>
+        <div class="cap" data-i18n="gal.cap2">Brain angiogenesis · 3 dpf</div>
       </figure>
       <figure class="plate reveal">
         <div class="field" style="background:var(--lymph) center/cover;filter:none"></div>
-        <div class="cap">Skin whole-mount · blood (blue) + lymphatics (green)</div>
+        <div class="cap" data-i18n="gal.cap3">Skin whole-mount · blood (blue) + lymphatics (green)</div>
       </figure>
     </div>
   </div>
@@ -402,9 +413,9 @@
 <section class="section" id="publications">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow"><span class="dot dapi"></span><span class="mono">Publications</span></div>
-      <h2 class="title">Selected papers</h2>
-      <p class="lede">A selection from the lab and from Sébastien's earlier work. The full, up-to-date list lives on Google Scholar.</p>
+      <div class="eyebrow"><span class="dot dapi"></span><span class="mono" data-i18n="pub.eyebrow">Publications</span></div>
+      <h2 class="title" data-i18n="pub.title">Selected papers</h2>
+      <p class="lede" data-i18n="pub.lede">A selection from the lab and from Sébastien's earlier work. The full, up-to-date list lives on Google Scholar.</p>
     </div>
     <div class="pub-list reveal">
       <div class="pub">
@@ -481,7 +492,7 @@
       </div>
     </div>
     <div class="scholar-link reveal">
-      <a href="https://scholar.google.ca/citations?user=0uYah5cAAAAJ&hl=en" target="_blank" rel="noopener">View the full, up-to-date list on Google Scholar →</a>
+      <a href="https://scholar.google.ca/citations?user=0uYah5cAAAAJ&hl=en" target="_blank" rel="noopener" data-i18n="pub.scholar">View the full, up-to-date list on Google Scholar →</a>
     </div>
   </div>
 </section>
@@ -490,24 +501,24 @@
 <section class="section" id="news">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow"><span class="dot gfp"></span><span class="mono">News</span></div>
-      <h2 class="title">What's happening</h2>
+      <div class="eyebrow"><span class="dot gfp"></span><span class="mono" data-i18n="news.eyebrow">News</span></div>
+      <h2 class="title" data-i18n="news.title">What's happening</h2>
     </div>
     <div class="news-list reveal">
 
       <div class="news">
-        <div class="when">Jul 30, 2025</div>
+        <div class="when" data-i18n="news1.when">Jul 30, 2025</div>
         <div>
-          <h4>Featured on the Research Under the Scope podcast</h4>
-          <p>Sébastien was a guest on the University of Saskatchewan's <em>Research Under the Scope</em> podcast — "Fishing for Answers in Vascular Biology." <a href="https://podcasts.apple.com/us/podcast/dr-s%C3%A9bastien-gauvrit-fishing-for-answers-in-vascular/id1513240190?i=1000719766009" target="_blank" rel="noopener" style="color:var(--dapi)">Listen on Apple Podcasts →</a></p>
+          <h4 data-i18n="news1.h4">Featured on the Research Under the Scope podcast</h4>
+          <p data-i18n="news1.p">Sébastien was a guest on the University of Saskatchewan's <em>Research Under the Scope</em> podcast — "Fishing for Answers in Vascular Biology." <a href="https://podcasts.apple.com/us/podcast/dr-s%C3%A9bastien-gauvrit-fishing-for-answers-in-vascular/id1513240190?i=1000719766009" target="_blank" rel="noopener" style="color:var(--dapi)">Listen on Apple Podcasts →</a></p>
         </div>
       </div>
 
       <div class="news">
         <div class="when">2025</div>
         <div>
-          <h4>Two NSERC grants to grow the lab</h4>
-          <p>The lab received two NSERC awards totalling $340,000 to expand USask's zebrafish facility and advance our vascular modeling work.</p>
+          <h4 data-i18n="news2.h4">Two NSERC grants to grow the lab</h4>
+          <p data-i18n="news2.p">The lab received two NSERC awards totalling $340,000 to expand USask's zebrafish facility and advance our vascular modeling work.</p>
         </div>
       </div>
 
@@ -519,20 +530,20 @@
 <section class="section" id="support">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow"><span class="dot cherry"></span><span class="mono">Support</span></div>
-      <h2 class="title">Support the lab</h2>
-      <p class="lede">Philanthropy moves discovery faster than grants alone. If you'd like to help advance our research into vascular disease, I'd be glad to hear from you.</p>
+      <div class="eyebrow"><span class="dot cherry"></span><span class="mono" data-i18n="sup.eyebrow">Support</span></div>
+      <h2 class="title" data-i18n="sup.title">Support the lab</h2>
+      <p class="lede" data-i18n="sup.lede">Philanthropy moves discovery faster than grants alone. If you'd like to help advance our research into vascular disease, I'd be glad to hear from you.</p>
     </div>
     <div class="panel reveal">
-      <h3>Partner with our research</h3>
-      <p>Gifts to the lab have a direct and lasting impact. Support can help us:</p>
+      <h3 data-i18n="sup.h3">Partner with our research</h3>
+      <p data-i18n="sup.p1">Gifts to the lab have a direct and lasting impact. Support can help us:</p>
       <ul>
-        <li>Sustain and expand our zebrafish imaging facility</li>
-        <li>Train the next generation of vascular biologists</li>
-        <li>Push toward new approaches for diseases like age-related macular degeneration and lymphedema</li>
+        <li data-i18n="sup.li1">Sustain and expand our zebrafish imaging facility</li>
+        <li data-i18n="sup.li2">Train the next generation of vascular biologists</li>
+        <li data-i18n="sup.li3">Push toward new approaches for diseases like age-related macular degeneration and lymphedema</li>
       </ul>
-      <p style="margin-bottom:22px">Whether you're an individual, a foundation, or an industry partner, gifts can be arranged through the University of Saskatchewan and directed to our work. Reach out and let's talk about what's possible.</p>
-      <a class="btn" href="mailto:sebastien.gauvrit@usask.ca?subject=Supporting%20the%20Gauvrit%20Lab">Contact Sébastien about giving</a>
+      <p style="margin-bottom:22px" data-i18n="sup.p2">Whether you're an individual, a foundation, or an industry partner, gifts can be arranged through the University of Saskatchewan and directed to our work. Reach out and let's talk about what's possible.</p>
+      <a class="btn" href="mailto:sebastien.gauvrit@usask.ca?subject=Supporting%20the%20Gauvrit%20Lab" data-i18n="sup.btn">Contact Sébastien about giving</a>
     </div>
   </div>
 </section>
@@ -541,20 +552,20 @@
 <section class="section" id="contact">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow"><span class="dot dapi"></span><span class="mono">Contact</span></div>
-      <h2 class="title">Get in touch</h2>
+      <div class="eyebrow"><span class="dot dapi"></span><span class="mono" data-i18n="con.eyebrow">Contact</span></div>
+      <h2 class="title" data-i18n="con.title">Get in touch</h2>
     </div>
     <div class="contact-grid">
       <div class="contact-info reveal">
-        <div class="row"><div class="k">Email</div><div class="v"><a href="mailto:sebastien.gauvrit@usask.ca">sebastien.gauvrit@usask.ca</a></div></div>
-        <div class="row"><div class="k">Department</div><div class="v">Anatomy, Physiology &amp; Pharmacology<br>College of Medicine, University of Saskatchewan</div></div>
-        <div class="row"><div class="k">Find us</div><div class="v">Health Sciences Building (HLTH), Room 3B40<br>107 Wiggins Road, Saskatoon, SK&nbsp;S7N&nbsp;5E5</div></div>
-        <div class="row"><div class="k">Profiles</div><div class="v"><a href="https://medicine.usask.ca/profiles/anatomy-physiology-pharmacology/sebastien-gauvrit.php" target="_blank" rel="noopener">USask Faculty</a> &nbsp;·&nbsp; <a href="https://scholar.google.ca/citations?user=0uYah5cAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></div></div>
-        <div class="row"><div class="k">Joining the lab</div><div class="v">If you're interested in joining the lab, please email me your CV, academic transcript, and a short statement of your research motivation.</div></div>
+        <div class="row"><div class="k" data-i18n="con.k.email">Email</div><div class="v"><a href="mailto:sebastien.gauvrit@usask.ca">sebastien.gauvrit@usask.ca</a></div></div>
+        <div class="row"><div class="k" data-i18n="con.k.dept">Department</div><div class="v" data-i18n="con.v.dept">Anatomy, Physiology &amp; Pharmacology<br>College of Medicine, University of Saskatchewan</div></div>
+        <div class="row"><div class="k" data-i18n="con.k.find">Find us</div><div class="v" data-i18n="con.v.find">Health Sciences Building (HLTH), Room 3B40<br>107 Wiggins Road, Saskatoon, SK&nbsp;S7N&nbsp;5E5</div></div>
+        <div class="row"><div class="k" data-i18n="con.k.profiles">Profiles</div><div class="v"><a href="https://medicine.usask.ca/profiles/anatomy-physiology-pharmacology/sebastien-gauvrit.php" target="_blank" rel="noopener" data-i18n="con.usaskfac">USask Faculty</a> &nbsp;·&nbsp; <a href="https://scholar.google.ca/citations?user=0uYah5cAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></div></div>
+        <div class="row"><div class="k" data-i18n="con.k.join">Joining the lab</div><div class="v" data-i18n="con.v.join">If you're interested in joining the lab, please email me your CV, academic transcript, and a short statement of your research motivation.</div></div>
       </div>
       <div class="landack reveal">
-        <span class="mono">Land Acknowledgement</span>
-        <p>The University of Saskatchewan's main campus is situated on <a href="https://indigenous.usask.ca/indigenization-reconciliation/Land-Acknowledgement.php" target="_blank" rel="noopener">Treaty 6 Territory and the Homeland of the Métis</a>. We pay our respect to the First Nations and Métis ancestors of this place and reaffirm our relationship with one another.</p>
+        <span class="mono" data-i18n="con.land.title">Land Acknowledgement</span>
+        <p data-i18n="con.land.p2">The University of Saskatchewan's main campus is situated on <a href="https://indigenous.usask.ca/indigenization-reconciliation/Land-Acknowledgement.php" target="_blank" rel="noopener">Treaty 6 Territory and the Homeland of the Métis</a>. We pay our respect to the First Nations and Métis ancestors of this place and reaffirm our relationship with one another.</p>
       </div>
     </div>
   </div>
@@ -564,9 +575,9 @@
 <section class="section" id="funding">
   <div class="wrap">
     <div class="section-head reveal" style="margin-bottom:34px">
-      <div class="eyebrow"><span class="dot gfp"></span><span class="mono">Funding &amp; Support</span></div>
-      <h2 class="title">With thanks to our funders</h2>
-      <p class="lede">Our research is made possible by the generous support of these organizations.</p>
+      <div class="eyebrow"><span class="dot gfp"></span><span class="mono" data-i18n="fund.eyebrow">Funding &amp; Support</span></div>
+      <h2 class="title" data-i18n="fund.title">With thanks to our funders</h2>
+      <p class="lede" data-i18n="fund.lede">Our research is made possible by the generous support of these organizations.</p>
     </div>
     <div class="funding-card reveal">
       <img loading="lazy" decoding="async" src="nserc.svg" alt="Natural Sciences and Engineering Research Council of Canada (NSERC / CRSNG)">
@@ -623,6 +634,30 @@
   });
   lb.addEventListener('click',closeLB);
   document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLB(); });
+</script>
+<script>
+(function(){
+  var FR = {"nav.home": "Accueil", "nav.research": "Recherche", "nav.model": "Modèle", "nav.team": "Équipe", "nav.gallery": "Galerie", "nav.publications": "Publications", "nav.news": "Actualités", "nav.support": "Soutien", "nav.contact": "Contact", "hero.eyebrow": "Développement vasculaire en santé et en maladie &nbsp;·&nbsp; Université de la Saskatchewan", "hero.h1": "Comment le corps construit ses <em>vaisseaux sanguins et lymphatiques</em>.", "hero.sub": "Nous utilisons des modèles de poisson-zèbre et de souris, l’imagerie en direct et la génétique pour cartographier la formation des réseaux vasculaires — et ce qui se dérègle dans les maladies vasculaires.", "hero.scroll": "↓ &nbsp;Défiler", "res.eyebrow": "Recherche", "res.title": "Construire — et réparer — le système vasculaire", "res.lede": "Les vaisseaux sanguins et lymphatiques atteignent presque tous les tissus du corps. Nous étudions comment ils se construisent au cours du développement, comment les mêmes programmes sont réutilisés dans la maladie et la régénération, et comment ces connaissances pourraient se traduire en traitements. Le poisson-zèbre est transparent durant ses premiers jours de vie, ce qui nous permet d’observer la formation des vaisseaux en temps réel chez un animal vivant.", "res.pid1": "01 · SANG", "res.h3_1": "Angiogenèse et organisation des vaisseaux sanguins", "res.p1": "Comment les cellules endothéliales bourgeonnent, migrent et s’assemblent en un réseau organisé d’artères et de veines — et les signaux qui indiquent à un vaisseau où croître.", "res.tag.endo": "Endothélium", "res.tag.sprout": "Bourgeonnement", "res.tag.live": "Imagerie en direct", "res.pid2": "02 · LYMPHATIQUE", "res.h3_2": "Lymphangiogenèse et identité des vaisseaux", "res.p2": "Comment les cellules endothéliales lymphatiques sont spécifiées et séparées de la vascularisation sanguine, et ce que cela nous apprend sur le lymphœdème et les maladies lymphatiques.", "res.tag.lymphedema": "Lymphœdème", "res.pid3": "03 · SIGNALISATION", "res.h3_3": "Signalisation VEGF et résistance aux traitements", "res.p3": "Cartographier la redondance au sein de la famille VEGF pour comprendre comment les tumeurs et les tissus malades échappent aux thérapies anti-VEGFA — et concevoir des outils pour bloquer cette échappée.", "res.tag.antiang": "Anti-angiogéniques", "res.tag.amd": "DMLA", "res.pid4": "04 · MALADIE", "res.h3_4": "Vaisseaux dans la maladie et la régénération", "res.p4": "Utiliser le poisson-zèbre et la souris comme modèles vivants pour comprendre comment les réseaux vasculaires défaillent dans la maladie, et comment la revascularisation soutient la réparation et la régénération des tissus.", "res.tag.dmod": "Modèles de maladie", "res.tag.regen": "Régénération", "res.tag.transl": "Application clinique", "res.howwework": "Notre approche", "res.appr1": "<span class=\"dot gfp\"></span>Génétique du poisson-zèbre &middot; CRISPR/Cas9", "res.appr2": "<span class=\"dot dapi\"></span>Modèles murins", "res.appr3": "<span class=\"dot cherry\"></span>Imagerie confocale in vivo en direct", "res.appr4": "<span class=\"dot gfp\"></span>Rapporteurs fluorescents transgéniques", "res.appr5": "<span class=\"dot dapi\"></span>Biologie cellulaire et moléculaire", "zf.eyebrow": "Système modèle", "zf.title": "Pourquoi le poisson-zèbre?", "zf.lede": "Un petit poisson tropical qui nous permet d’observer les vaisseaux sanguins et lymphatiques s’assembler, en direct, dans un animal en développement.", "zf.p1": "Le poisson-zèbre (<em>Danio rerio</em>) est l’un des modèles les plus puissants en biologie vasculaire. Ses embryons et ses larves se développent à l’extérieur et sont presque entièrement transparents, de sorte qu’un réseau vasculaire entier peut être imagé à mesure qu’il se forme dans un animal vivant — avec une résolution et sur une échelle de temps tout simplement impossibles chez les mammifères.", "zf.p2": "Tout aussi important, la boîte à outils génétique est puissante. Des lignées transgéniques font briller les cellules endothéliales et lymphatiques en couleurs fluorescentes, CRISPR/Cas9 rend l’édition génique rapide et précise, et les voies fondamentales qui construisent les vaisseaux sont conservées avec l’humain. De grandes pontes et un développement rapide font du poisson-zèbre un modèle idéal pour les criblages génétiques et pour étudier ce qui se passe lorsque le développement vasculaire se dérègle. C’est précisément pourquoi nous l’utilisons pour étudier la vascularisation en santé et en maladie.", "zf.li1": "Optiquement transparent &mdash; imagerie des vaisseaux <em>in vivo</em> en direct", "zf.li2": "Développement externe et rapide, et grandes pontes", "zf.li3": "Signalisation vasculaire conservée avec l’humain", "zf.li4": "Rapporteurs transgéniques marquant les vaisseaux sanguins et lymphatiques", "zf.li5": "Génétique CRISPR/Cas9, et adapté au criblage de médicaments", "zf.figcap": "Imagerie en direct avec un rapporteur fluorescent à base de nanocorps (présentée en niveaux de gris inversés) &mdash; le type d’ingénierie de sondes et de microscopie en direct au cœur des travaux du laboratoire.", "team.eyebrow": "Équipe", "team.title": "Les personnes derrière le laboratoire", "team.pi.role": "Chercheur principal · Professeur adjoint", "team.pi.bio": "Originaire de France, Sébastien s’est formé en biologie vasculaire et du développement et a mis au point de nouveaux modèles de maladie vasculaire au cours de ses travaux postdoctoraux en Allemagne. Il dirige aujourd’hui le laboratoire à titre de professeur adjoint au Département d’anatomie, de physiologie et de pharmacologie de l’Université de la Saskatchewan, où l’équipe utilise des modèles de poisson-zèbre et de souris pour comprendre comment le système vasculaire se forme en santé et en maladie.", "team.role.tech": "Technicienne de recherche", "team.role.summer": "Étudiante d’été", "team.readbio": "Lire la bio", "team.ana.bio1": "Ana et son petit monstre à fourrure à quatre pattes sont des transplantées des États-Unis. Amoureuse des animaux dans l’âme, Ana a obtenu son B.Sc. en biologie à l’Université Rockhurst, où elle est tombée sous le charme d’une boîte d’embryons de poisson-zèbre en développement. Elle aime courir (lentement) à travers les magnifiques prairies de la Saskatchewan avec son monstre, qui la traîne généralement sur des kilomètres.", "team.ana.bio2": "Au laboratoire Gauvrit, Ana étudie l’influence de gènes clés dans le développement du système lymphatique en utilisant à la fois le poisson-zèbre et la souris. Elle aime concevoir les outils transgéniques qui faciliteront ce projet et amadouer les bactéries pour qu’elles fabriquent les gènes qu’elle souhaite.", "team.alumni": "Anciens membres", "team.alum.role": "Ancien membre du laboratoire", "gal.eyebrow": "Galerie", "gal.title": "Au microscope", "gal.lede": "Quelques coups de cœur du laboratoire — l’équipe et les vaisseaux que nous imageons chez le poisson-zèbre vivant et en préparation entière.", "gal.cap1": "Le laboratoire · décembre 2025", "gal.cap2": "Angiogenèse cérébrale · 3 jpf", "gal.cap3": "Peau en préparation entière · sang (bleu) + lymphatiques (vert)", "pub.eyebrow": "Publications", "pub.title": "Articles choisis", "pub.lede": "Une sélection issue du laboratoire et des travaux antérieurs de Sébastien. La liste complète et à jour se trouve sur Google Scholar.", "pub.scholar": "Voir la liste complète et à jour sur Google Scholar →", "news.eyebrow": "Actualités", "news.title": "Quoi de neuf", "news1.when": "30 juil. 2025", "news1.h4": "À l’honneur dans le balado Research Under the Scope", "news1.p": "Sébastien a été l’invité du balado <em>Research Under the Scope</em> de l’Université de la Saskatchewan — «&nbsp;Fishing for Answers in Vascular Biology&nbsp;». <a href=\"https://podcasts.apple.com/us/podcast/dr-s%C3%A9bastien-gauvrit-fishing-for-answers-in-vascular/id1513240190?i=1000719766009\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--dapi)\">Écouter sur Apple Podcasts →</a>", "news2.h4": "Deux subventions du CRSNG pour faire croître le laboratoire", "news2.p": "Le laboratoire a reçu deux subventions du CRSNG totalisant 340 000&nbsp;$ pour agrandir l’animalerie de poissons-zèbres de l’USask et faire progresser nos travaux de modélisation vasculaire.", "sup.eyebrow": "Soutien", "sup.title": "Soutenir le laboratoire", "sup.lede": "La philanthropie accélère la découverte plus que les subventions seules. Si vous souhaitez contribuer à faire avancer nos recherches sur les maladies vasculaires, ce serait un plaisir d’échanger avec vous.", "sup.h3": "Devenez partenaire de nos recherches", "sup.p1": "Les dons au laboratoire ont un impact direct et durable. Votre soutien peut nous aider à&nbsp;:", "sup.li1": "Maintenir et agrandir notre plateforme d’imagerie du poisson-zèbre", "sup.li2": "Former la prochaine génération de biologistes vasculaires", "sup.li3": "Faire progresser de nouvelles approches pour des maladies comme la dégénérescence maculaire liée à l’âge et le lymphœdème", "sup.p2": "Que vous soyez un particulier, une fondation ou un partenaire de l’industrie, les dons peuvent être organisés par l’entremise de l’Université de la Saskatchewan et affectés à nos travaux. Écrivez-nous et discutons de ce qui est possible.", "sup.btn": "Contacter Sébastien au sujet d’un don", "con.eyebrow": "Contact", "con.title": "Nous joindre", "con.k.email": "Courriel", "con.k.dept": "Département", "con.v.dept": "Anatomie, physiologie et pharmacologie<br>Collège de médecine, Université de la Saskatchewan", "con.k.find": "Nous trouver", "con.v.find": "Édifice des sciences de la santé (HLTH), bureau 3B40<br>107 Wiggins Road, Saskatoon (Saskatchewan)&nbsp;S7N&nbsp;5E5", "con.k.profiles": "Profils", "con.usaskfac": "Corps professoral USask", "con.k.join": "Se joindre au laboratoire", "con.v.join": "Si vous souhaitez vous joindre au laboratoire, veuillez m’envoyer par courriel votre CV, votre relevé de notes et une brève déclaration de vos motivations de recherche.", "con.land.title": "Reconnaissance territoriale", "con.land.p2": "Le campus principal de l’Université de la Saskatchewan est situé sur <a href=\"https://indigenous.usask.ca/indigenization-reconciliation/Land-Acknowledgement.php\" target=\"_blank\" rel=\"noopener\">le territoire visé par le Traité n&deg;&nbsp;6 et la patrie de la Nation métisse</a>. Nous rendons hommage aux ancêtres des Premières Nations et de la Nation métisse de ce lieu et réaffirmons nos relations les uns avec les autres.", "fund.eyebrow": "Financement et soutien", "fund.title": "Avec nos remerciements aux organismes qui nous soutiennent", "fund.lede": "Nos recherches sont rendues possibles grâce au généreux soutien de ces organisations.", "team.role.msc": "Étudiant(e) à la maîtrise", "hero.cap": "Larve de poisson-zèbre · vascularisation sanguine · imagerie confocale en direct"};
+  var nodes = document.querySelectorAll('[data-i18n]');
+  var EN = {};
+  nodes.forEach(function(n){ EN[n.getAttribute('data-i18n')] = n.innerHTML; });
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    nodes.forEach(function(n){
+      var k = n.getAttribute('data-i18n');
+      var v = (lang === 'fr') ? (FR[k] !== undefined ? FR[k] : EN[k]) : EN[k];
+      if (v !== undefined) n.innerHTML = v;
+    });
+    document.querySelectorAll('[data-lang-btn]').forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang-btn') === lang));
+    });
+    var y = document.getElementById('yr'); if (y) y.textContent = new Date().getFullYear();
+  }
+  document.querySelectorAll('[data-lang-btn]').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang-btn')); });
+  });
+  setLang('en');
+})();
 </script>
 </body>
 </html>
