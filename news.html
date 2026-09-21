@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+  GAUVRIT LAB - Vascular Development in Health and Disease
+  University of Saskatchewan, College of Medicine
+  Multi-page site: each topic lives on its own page (see nav). Shared look and
+  behaviour live in styles.css and script.js; the homepage intro animation is
+  in intro.js. Images/video are embedded directly in each page, so it works
+  anywhere without a build step.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News · Gauvrit Lab</title>
+<meta name="description" content="Recent news, awards, and updates from the Gauvrit Lab, University of Saskatchewan.">
+<link rel="canonical" href="https://sebgzlab.github.io/LabWebsite/news.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="News · Gauvrit Lab">
+<meta property="og:description" content="Recent news, awards, and updates from the Gauvrit Lab, University of Saskatchewan.">
+<meta property="og:url" content="https://sebgzlab.github.io/LabWebsite/news.html">
+<meta property="og:site_name" content="Gauvrit Lab">
+<meta property="og:locale" content="en_CA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="News · Gauvrit Lab">
+<meta name="twitter:description" content="Recent news, awards, and updates from the Gauvrit Lab, University of Saskatchewan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="news">
+<div class="page-bg" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html"><span class="seal"></span>Gauvrit Lab</a>
+    <nav class="links" aria-label="Primary">
+      <a href="index.html" data-page="home" data-i18n="nav.home">Home</a>
+      <a href="research.html" data-page="research" data-i18n="nav.research">Research</a>
+      <a href="model.html" data-page="model" data-i18n="nav.model">Model</a>
+      <a href="cellbio.html" data-page="cellbio" data-i18n="nav.cellbio">Cell Biology</a>
+      <a href="team.html" data-page="team" data-i18n="nav.team">Team</a>
+      <a href="gallery.html" data-page="gallery" data-i18n="nav.gallery">Gallery</a>
+      <a href="publications.html" data-page="publications" data-i18n="nav.publications">Publications</a>
+      <a href="news.html" data-page="news" data-i18n="nav.news">News</a>
+      <a href="support.html" data-page="support" data-i18n="nav.support">Support</a>
+      <a href="contact.html" data-page="contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+      <span class="lang-sep">/</span>
+      <button type="button" data-lang-btn="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+</header>
+<!-- ===== NEWS ===== -->
+<section class="section" id="news">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot gfp"></span><span class="mono" data-i18n="news.eyebrow">News</span></div>
+      <h2 class="title" data-i18n="news.title">What's happening</h2>
+    </div>
+    <div class="news-list reveal">
+
+      <div class="news">
+        <div class="when" data-i18n="news.zyna75.when">Aug 2026</div>
+        <div>
+          <h4 data-i18n="news.zyna75.h4">Zyna receives a 75th Anniversary Scholarship for her MSc</h4>
+          <p data-i18n="news.zyna75.p">Congratulations to Zyna, who was awarded a College of Graduate and Postdoctoral Studies (CGPS) 75th Anniversary Scholarship in support of her MSc research in the lab.</p>
+        </div>
+      </div>
+
+      <div class="news">
+        <div class="when" data-i18n="news.comgrad.when">May 2026</div>
+        <div>
+          <h4 data-i18n="news.comgrad.h4">Wrynan receives a College of Medicine Graduate Student Award (CoMGRAD)</h4>
+          <p data-i18n="news.comgrad.p">Congratulations to Wrynan, who was awarded a College of Medicine Graduate Student Award (CoMGRAD) in support of his graduate research in the lab.</p>
+        </div>
+      </div>
+
+      <div class="news">
+        <div class="when" data-i18n="news.studentships.when">Mar 2026</div>
+        <div>
+          <h4 data-i18n="news.studentships.h4">Congratulations to Maureen and Zyna on their research funding for this summer!</h4>
+          <p data-i18n="news.studentships.p">Maureen received a Biomed studentship supported by the Office of the Vice-Dean Research, College of Medicine, and Zyna was awarded both an NSERC Undergraduate Student Research Award (USRA) and a Biomed studentship. Congratulations to you both!</p>
+        </div>
+      </div>
+
+      <div class="news">
+        <div class="when" data-i18n="news.cmra.when">Oct 2025</div>
+        <div>
+          <h4 data-i18n="news.cmra.h4">College of Medicine Research Award</h4>
+          <p data-i18n="news.cmra.p">Sébastien received a College of Medicine Research Award from the University of Saskatchewan in support of the lab's research.</p>
+        </div>
+      </div>
+
+      <div class="news">
+        <div class="when" data-i18n="news1.when">Jul 30, 2025</div>
+        <div>
+          <h4 data-i18n="news1.h4">Featured on the Research Under the Scope podcast</h4>
+          <p data-i18n="news1.p">Sébastien was a guest on the University of Saskatchewan's <em>Research Under the Scope</em> podcast — "Fishing for Answers in Vascular Biology." <a href="https://podcasts.apple.com/us/podcast/dr-s%C3%A9bastien-gauvrit-fishing-for-answers-in-vascular/id1513240190?i=1000719766009" target="_blank" rel="noopener" style="color:var(--dapi)">Listen on Apple Podcasts →</a></p>
+        </div>
+      </div>
+
+      <div class="news">
+        <div class="when">2025</div>
+        <div>
+          <h4 data-i18n="news2.h4">Two NSERC grants to grow the lab</h4>
+          <p data-i18n="news2.p">The lab received two NSERC awards totalling $340,000 to expand USask's zebrafish facility and advance our vascular modeling work.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap foot-in">
+    <span class="brand" style="font-size:17px"><span class="seal"></span>Gauvrit Lab</span>
+    <span class="mono">© <span id="yr"></span> Gauvrit Lab · Vascular Development · University of Saskatchewan</span>
+  </div>
+  <div class="wrap cite-lab">
+    To cite or link this site: Gauvrit Lab. Vascular Development in Health &amp; Disease. University of Saskatchewan. <code>https://sebgzlab.github.io/LabWebsite/</code> — for search engines and colleagues linking to the lab, please use "Gauvrit Lab" or "Sébastien Gauvrit" as the link text where possible, since that's what helps the page surface when someone searches the name.
+  </div>
+</footer>
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <span class="lb-close">Close &#10005;</span>
+  <img alt="Enlarged gallery image">
+</div>
+<script src="script.js"></script>
+</body>
+</html>

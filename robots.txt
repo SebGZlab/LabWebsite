@@ -1,0 +1,12 @@
+# Allow all crawlers full access to the site.
+User-agent: *
+Allow: /
+
+# Note: on a GitHub Pages *project* site (sebgzlab.github.io/LabWebsite/),
+# crawlers only check the true root — https://sebgzlab.github.io/robots.txt —
+# not this path, so this file won't actually be read unless it's also placed
+# in the root "sebgzlab.github.io" user-page repo (if you have one).
+# No action needed either way: the default with no robots.txt is "crawl everything,"
+# which is exactly what this file says too. Keeping it here is harmless and becomes
+# fully effective if you ever move to a custom domain that serves from the root.
+Sitemap: https://sebgzlab.github.io/LabWebsite/sitemap.xml

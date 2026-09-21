@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This site is now multiple pages (one per topic, see the top nav).
+  Submit this file at: https://sebgzlab.github.io/LabWebsite/sitemap.xml
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://sebgzlab.github.io/LabWebsite/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sebgzlab.github.io/LabWebsite/research.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sebgzlab.github.io/LabWebsite/model.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sebgzlab.github.io/LabWebsite/cellbio.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sebgzlab.github.io/LabWebsite/team.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sebgzlab.github.io/LabWebsite/gallery.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sebgzlab.github.io/LabWebsite/publications.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sebgzlab.github.io/LabWebsite/news.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sebgzlab.github.io/LabWebsite/support.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sebgzlab.github.io/LabWebsite/contact.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>
